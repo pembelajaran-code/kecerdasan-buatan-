@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Endpoint API untuk chat
 app.post('/api/chat', async (req, res) => {
   const { message } = req.body;
 
@@ -44,16 +45,22 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-const path = require('path');
-app.use(express.static(path.join(__dirname)));
+// Menyajikan file statis
+app.use(express.static(__dirname));
 
+// Rute-rute
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(__dirname + '/index.html');
 });
 
-// Halaman alarm (alarm.html)
 app.get('/alarm', (req, res) => {
-  res.sendFile(path.join(__dirname, 'alarm.html'));
+  res.sendFile(__dirname + '/alarm.html');
 });
 
-app.listen(PORT, () => console.log(`🚀 AbidinAI Server jalan di port ${PORT}`));
+// Ekspor app Express untuk Vercel
+module.exports = app;
+
+// Jalankan server jika tidak di lingkungan Vercel
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => console.log(`🚀 Server AbidinAI berjalan di port ${PORT}`));
+}
