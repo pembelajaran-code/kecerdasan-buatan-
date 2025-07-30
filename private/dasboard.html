@@ -23,7 +23,7 @@
       overflow-x: hidden;
     }
 
-   
+    /* Sidebar Styles */
     .sidebar {
       width: 260px;
       background: #ffffff;
@@ -62,7 +62,7 @@
       padding: 0 10px;
     }
 
-  
+    /* menu digital */
     .menu-badge {
       margin-left: auto;
       background: #4f46e5;
@@ -136,7 +136,7 @@
       color: #718096;
     }
 
-  
+    /* Main Content Styles */
     .main-content {
       flex: 1;
       margin-left: 260px;
@@ -244,36 +244,36 @@
       position: relative;
     }
 
-    
+    /* Perubahan di sini untuk .code-container */
     .code-container {
       margin: 15px 0;
       border-radius: 8px;
       overflow: hidden;
-      background: #1e293b; 
-      border: 1px solid #374151; 
+      background: #1e293b; /* Warna background untuk keseluruhan container */
+      border: 1px solid #374151; /* Border untuk bingkai kode */
     }
 
-    
+    /* Gaya baru untuk header blok kode */
     .code-header {
-      background-color: #374151; 
-      color: #f8fafc; 
+      background-color: #374151; /* Warna latar belakang header */
+      color: #f8fafc; /* Warna teks di header */
       padding: 10px 15px;
       display: flex;
-      justify-content: flex-end; 
+      justify-content: flex-end; /* Tombol salin di kanan */
       align-items: center;
-      border-bottom: 1px solid #4a5568; 
-      font-size: 0.85rem; 
+      border-bottom: 1px solid #4a5568; /* Garis pemisah antara header dan kode */
+      font-size: 0.85rem; /* Ukuran font lebih kecil untuk header */
     }
 
-   
-    .code-container .copy-btn { 
-      position: static; 
-      background: transparent; 
-      color: #f8fafc; 
-      border: 1px solid #6b7280; 
+    /* Gaya baru untuk tombol salin di dalam header kode */
+    .code-container .copy-btn { /* Spesifikasi lebih tinggi agar menimpa gaya umum */
+      position: static; /* Hapus positioning absolut */
+      background: transparent; /* Background transparan */
+      color: #f8fafc; /* Warna teks putih */
+      border: 1px solid #6b7280; /* Border abu-abu */
       padding: 5px 10px;
       border-radius: 5px;
-      font-size: 0.8rem; 
+      font-size: 0.8rem; /* Ukuran font lebih kecil */
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
@@ -282,16 +282,16 @@
     }
 
     .code-container .copy-btn:hover {
-      background: #4f46e5; 
+      background: #4f46e5; /* Warna ungu saat hover */
       border-color: #4f46e5;
       color: white;
     }
 
     pre {
-      background: #1e293b; 
-      color: #f8fafc; 
+      background: #1e293b; /* Warna background untuk kode */
+      color: #f8fafc; /* Warna teks kode */
       padding: 15px;
-      border-radius: 0 0 8px 8px; 
+      border-radius: 0 0 8px 8px; /* Hilangkan border atas, sesuaikan border bawah */
       overflow-x: auto;
       font-family: 'Fira Code', 'Courier New', monospace;
       font-size: 14px;
@@ -417,7 +417,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    
+    /* Modal OCR */
     .modal {
       display: none;
       position: fixed;
@@ -691,6 +691,11 @@
        <span class="menu-badge"></span>
      </a>
 
+<a href="https://wa.me/6283169364879?text=Hallo+bang+mau+beli+nomor" class="menu-item" target="_blank">
+    <i class="fas fa-sim-card"></i>
+    <span>Jual Nomor Internasional Murah</span>
+</a>
+
      <a href="alarm.html" class="menu-item">
         <i class="fas fa-bell"></i>
         <span>Alarm AI</span>
@@ -705,11 +710,6 @@
         <i class="fas fa-user-md"></i>
         <span>Dokter Kesehatan</span>
       </a>
-
-      <div class="menu-item" id="ocrMenuItem">
-        <i class="fas fa-file-alt"></i>
-        <span>Ekstrak Teks (OCR)</span>
-      </div>
 
       <a href="https://wa.me/6283169364879?text=Hallo%20admin" class="menu-item" target="_blank">
           <i class="fas fa-exclamation-triangle"></i>
