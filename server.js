@@ -1,1 +1,236 @@
-const _0xf7a97=_0x41d0;function _0xe978(){const _0x1deecf=['env','sboard.htm','private/lo','oleh\x20OpenA','gatakan\x20ba','\x20tanpa\x20tag','n\x20Indonesi','1MtqiID','k\x20ada\x20bala','h\x20AbidinAI','Pesan\x20koso','mu\x20dibuat\x20','e,\x20gunakan','eEvLo','dikembangk','anya\x20siapa','POST','sendFile','n/json','an\x20oleh\x20Ab','/api/teleg','GLqkx','private/re','Kamu\x20adala','YDPVh','7aYDEUN','letions','\x20Groq\x20ai.\x0a','AbidinAI.\x0a','stringify','JEnpU','private/ob','nNJsn','592588WJxwCX','\x20adalah\x20Pr','ibuat\x20dan\x20','choices','un.','-\x20Jika\x20pen','3njJnFl','gFqax','\x20bertanya\x20','qXAaP','dalah\x20AI\x20b','cout-17b-1','/llama-4-s','tNiyX','/openai/v1','lan\x20di\x20por',',\x20jawablah','tentang\x20pr','5949138eyOmkL','wa\x20Preside','onesia,\x20ja','7004800ldhTqG','redirect','private/da','GROQ_API_K','esiden\x20Ind','TELEGRAM_C','4252653CYImDM','private/al','config','gin.html','oses\x20penge','ka\x20penggun','/api/chat','log','\x20bahwa\x20Abi','tick\x20(```)','body','https://ap','.org/bot','Pernah\x20men','jJBqn','ibuat\x20oleh','yiEeY','YNotH','🧑\x20Pesan\x20da','PORT',',\x20jawab\x20ba','\x20Server\x20ja','HAT_ID','9546670UkhwjQ','g\x20asal\x20Abi','\x20Jika\x20peng','\x20tiga\x20back','n\x20bahwa\x20ka','awablah\x20ba','dinAI,\x20jaw','OT_TOKEN','a\x20saat\x20ini','dinAI\x20masi','engembanga','a\x20AbidinAI','\x20mengataka','applicatio','get','RtcDX','anto.\x0a\x0aJAN','cors','/register','MzQVE','ari\x20Indone','\x20tentang\x20A','erikan\x20kod','GAN\x20PERNAH','Bearer\x20','nya\x20tentan','meta-llama','idin.\x0a-\x20Ji','san.','jdKWI','express','I:\x0a','gguna\x20bert','FWFQh','🚀\x20AbidinAI','success','dotenv','\x0aJika\x20memb','error','gkan\x20oleh\x20','i.groq.com','\x20HTML\x20apap','6e-instruc','I.\x0aJangan\x20','g\x20dikemban','bidinAI,\x20j','index.html','guna\x20berta','hwa\x20kamu\x20d','private/do','TELEGRAM_B','/chat/comp','/alarm','jbMRa','\x20berasal\x20d','cerdas\x20yan','inAI.\x0a-\x20Ji','a\x20pengguna','/dokter','1019486DhzAcv','n\x20AbidinAI','ram','kter.html','node-fetch',',\x20asisten\x20','use','static','path','mbangan.\x0a-','jTbXQ','rolan.html','hwa\x20kamu\x20a','ri\x20AbidinA','uatan\x20Abid','arm.html','post','message','alYrN','json','join','listen','Maaf,\x20tida','i.telegram','status','\x20tentang\x20p','sia.\x0a-\x20Jik','wablah\x20bah','1825215lchnoD','/login','a\x20bertanya','XZgnG','system','teKhp','gister.htm','ablah\x20bahw','abowo\x20Subi','\x20pembuatmu','content','/obrolan','/dasboard','user','/sendMessa','h\x20dalam\x20pr','cDNkS'];_0xe978=function(){return _0x1deecf;};return _0xe978();}(function(_0x3780e5,_0x4c6294){const _0x1894e9=_0x41d0,_0x5cbfeb=_0x3780e5();while(!![]){try{const _0x43202c=-parseInt(_0x1894e9(0x114))/(-0x1947+-0x188d+0x31d5*0x1)*(-parseInt(_0x1894e9(0xe0))/(-0xfe2+0xf*0x253+-0x12f9))+-parseInt(_0x1894e9(0x134))/(-0x1*0x1827+-0x256+0x1a80)*(-parseInt(_0x1894e9(0x12e))/(-0x26c4+0x1*-0x1d35+0x43fd))+parseInt(_0x1894e9(0xfc))/(0x1c9a+-0x676+-0x161f)+parseInt(_0x1894e9(0x140))/(-0x67b*0x2+-0x629*0x5+0xb*0x3fb)*(-parseInt(_0x1894e9(0x126))/(0xe00+-0x18b5+0xabc))+-parseInt(_0x1894e9(0x143))/(-0x15c1+-0x59*-0x69+0x3*-0x4e8)+parseInt(_0x1894e9(0x149))/(0xd1b+0x1f*0x9d+0xbf*-0x2b)+parseInt(_0x1894e9(0x160))/(-0x20d8+-0x20*-0xc7+0x802);if(_0x43202c===_0x4c6294)break;else _0x5cbfeb['push'](_0x5cbfeb['shift']());}catch(_0x225096){_0x5cbfeb['push'](_0x5cbfeb['shift']());}}}(_0xe978,-0xedb59+-0x8859b*0x2+0x28cbe1));const express=require(_0xf7a97(0xc3)),fetch=require(_0xf7a97(0xe4)),cors=require(_0xf7a97(0xb6));require(_0xf7a97(0xc9))[_0xf7a97(0x14b)]();const path=require(_0xf7a97(0xe8)),app=express(),PORT=process[_0xf7a97(0x10d)][_0xf7a97(0x15c)]||-0xc2*0x13+-0x4*-0x704+-0x1f2;function _0x41d0(_0x50b9c3,_0x432e09){const _0x380bbf=_0xe978();return _0x41d0=function(_0xa08fb6,_0x8c03cb){_0xa08fb6=_0xa08fb6-(0x2136+-0x1*0x458+0x321*-0x9);let _0x2bac5f=_0x380bbf[_0xa08fb6];return _0x2bac5f;},_0x41d0(_0x50b9c3,_0x432e09);}app[_0xf7a97(0xe6)](cors()),app[_0xf7a97(0xe6)](express[_0xf7a97(0xf3)]()),app[_0xf7a97(0xf0)](_0xf7a97(0x14f),async(_0x134f89,_0x530cce)=>{const _0xdbc6a2=_0xf7a97,_0x4af875={'XZgnG':_0xdbc6a2(0xbf)+_0xdbc6a2(0x13a)+_0xdbc6a2(0x139)+_0xdbc6a2(0xcf)+'t','jbMRa':_0xdbc6a2(0x100),'JEnpU':_0xdbc6a2(0x109),'tNiyX':function(_0x54d114,_0xd484b5,_0x46cb63){return _0x54d114(_0xd484b5,_0x46cb63);},'RtcDX':_0xdbc6a2(0x154)+_0xdbc6a2(0xcd)+_0xdbc6a2(0x13c)+_0xdbc6a2(0xd8)+_0xdbc6a2(0x127),'YDPVh':_0xdbc6a2(0x11d),'GLqkx':_0xdbc6a2(0x16d)+_0xdbc6a2(0x11f),'yiEeY':_0xdbc6a2(0xf6)+_0xdbc6a2(0x115)+_0xdbc6a2(0xc1)},{message:_0x5b893c}=_0x134f89[_0xdbc6a2(0x153)],_0x589080={'model':_0x4af875[_0xdbc6a2(0xff)],'messages':[{'role':_0x4af875[_0xdbc6a2(0xda)],'content':_0xdbc6a2(0x124)+_0xdbc6a2(0x116)+_0xdbc6a2(0xe5)+_0xdbc6a2(0xdc)+_0xdbc6a2(0xd1)+_0xdbc6a2(0xcc)+_0xdbc6a2(0x129)+_0xdbc6a2(0x133)+_0xdbc6a2(0xc5)+_0xdbc6a2(0x11c)+_0xdbc6a2(0x105)+_0xdbc6a2(0x15d)+_0xdbc6a2(0xd5)+_0xdbc6a2(0x130)+_0xdbc6a2(0x11b)+_0xdbc6a2(0x120)+_0xdbc6a2(0xc0)+_0xdbc6a2(0x14e)+_0xdbc6a2(0xfe)+_0xdbc6a2(0xba)+_0xdbc6a2(0xd2)+_0xdbc6a2(0x165)+_0xdbc6a2(0xec)+_0xdbc6a2(0x138)+_0xdbc6a2(0xee)+_0xdbc6a2(0xdd)+_0xdbc6a2(0x14e)+_0xdbc6a2(0xfe)+_0xdbc6a2(0xf9)+_0xdbc6a2(0x16a)+_0xdbc6a2(0xe1)+_0xdbc6a2(0x13e)+_0xdbc6a2(0x151)+_0xdbc6a2(0x169)+_0xdbc6a2(0x10b)+_0xdbc6a2(0x14d)+_0xdbc6a2(0xe9)+_0xdbc6a2(0x162)+_0xdbc6a2(0xd4)+_0xdbc6a2(0xbe)+_0xdbc6a2(0x161)+_0xdbc6a2(0x166)+_0xdbc6a2(0x103)+_0xdbc6a2(0x16b)+_0xdbc6a2(0xdb)+_0xdbc6a2(0xb9)+_0xdbc6a2(0xfa)+_0xdbc6a2(0xde)+_0xdbc6a2(0x136)+_0xdbc6a2(0x13f)+_0xdbc6a2(0x147)+_0xdbc6a2(0x142)+_0xdbc6a2(0xfb)+_0xdbc6a2(0x141)+_0xdbc6a2(0x113)+_0xdbc6a2(0x168)+_0xdbc6a2(0x12f)+_0xdbc6a2(0x104)+_0xdbc6a2(0xb5)+_0xdbc6a2(0xbc)+_0xdbc6a2(0x16c)+_0xdbc6a2(0x164)+_0xdbc6a2(0x118)+_0xdbc6a2(0x110)+_0xdbc6a2(0xd0)+_0xdbc6a2(0x156)+_0xdbc6a2(0x111)+_0xdbc6a2(0xd5)+_0xdbc6a2(0x158)+_0xdbc6a2(0x128)+_0xdbc6a2(0xca)+_0xdbc6a2(0xbb)+_0xdbc6a2(0x119)+_0xdbc6a2(0x163)+_0xdbc6a2(0x152)+_0xdbc6a2(0x112)+_0xdbc6a2(0xce)+_0xdbc6a2(0x132)},{'role':_0x4af875[_0xdbc6a2(0x12b)],'content':_0x5b893c}],'temperature':0.7,'max_tokens':0x400};try{const _0x2926dd=await _0x4af875[_0xdbc6a2(0x13b)](fetch,_0x4af875[_0xdbc6a2(0x16f)],{'method':_0x4af875[_0xdbc6a2(0x125)],'headers':{'Content-Type':_0x4af875[_0xdbc6a2(0x122)],'Authorization':_0xdbc6a2(0xbd)+process[_0xdbc6a2(0x10d)][_0xdbc6a2(0x146)+'EY']},'body':JSON[_0xdbc6a2(0x12a)](_0x589080)}),_0x1ca243=await _0x2926dd[_0xdbc6a2(0xf3)](),_0x4f7dae=_0x1ca243[_0xdbc6a2(0x131)]?.[-0x156e*0x1+0x3*0x92f+-0x61f*0x1]?.[_0xdbc6a2(0xf1)]?.[_0xdbc6a2(0x106)]||_0x4af875[_0xdbc6a2(0x159)];_0x530cce[_0xdbc6a2(0xf3)]({'reply':_0x4f7dae});}catch(_0xe04653){_0x530cce[_0xdbc6a2(0xf8)](-0x17b0+0x20f*0xd+-0x11f)[_0xdbc6a2(0xf3)]({'error':_0xe04653[_0xdbc6a2(0xf1)]});}}),app[_0xf7a97(0xf0)](_0xf7a97(0x121)+_0xf7a97(0xe2),async(_0x2fa778,_0x2645aa)=>{const _0x5b8711=_0xf7a97,_0x3539b7={'jTbXQ':_0x5b8711(0x117)+'ng','cDNkS':function(_0x5e94dc,_0x44e72c,_0x133c25){return _0x5e94dc(_0x44e72c,_0x133c25);},'teKhp':_0x5b8711(0x11d),'qXAaP':_0x5b8711(0x16d)+_0x5b8711(0x11f),'eEvLo':_0x5b8711(0xc8),'jdKWI':_0x5b8711(0xcb)},{text:_0x5cc74d}=_0x2fa778[_0x5b8711(0x153)];if(!_0x5cc74d)return _0x2645aa[_0x5b8711(0xf8)](0x3f1*0x4+-0x200e+0x2*0x8ed)[_0x5b8711(0xf3)]({'error':_0x3539b7[_0x5b8711(0xea)]});const _0x4b390c=process[_0x5b8711(0x10d)][_0x5b8711(0xd7)+_0x5b8711(0x167)],_0x24ba99=process[_0x5b8711(0x10d)][_0x5b8711(0x148)+_0x5b8711(0x15f)],_0xefd2ba=_0x5b8711(0x154)+_0x5b8711(0xf7)+_0x5b8711(0x155)+_0x4b390c+(_0x5b8711(0x10a)+'ge');try{const _0x4043e9=await _0x3539b7[_0x5b8711(0x10c)](fetch,_0xefd2ba,{'method':_0x3539b7[_0x5b8711(0x101)],'headers':{'Content-Type':_0x3539b7[_0x5b8711(0x137)]},'body':JSON[_0x5b8711(0x12a)]({'chat_id':_0x24ba99,'text':_0x5b8711(0x15b)+_0x5b8711(0xed)+_0x5b8711(0xc4)+_0x5cc74d})}),_0x146345=await _0x4043e9[_0x5b8711(0xf3)]();_0x2645aa[_0x5b8711(0xf3)]({'status':_0x3539b7[_0x5b8711(0x11a)],'data':_0x146345});}catch(_0x479417){_0x2645aa[_0x5b8711(0xf8)](-0x1*0x845+0x2*-0x62b+0x168f)[_0x5b8711(0xf3)]({'status':_0x3539b7[_0x5b8711(0xc2)],'message':_0x479417[_0x5b8711(0xf1)]});}}),app[_0xf7a97(0xe6)](express[_0xf7a97(0xe7)](path[_0xf7a97(0xf4)](__dirname))),app[_0xf7a97(0x16e)]('/',(_0x5ecf65,_0x57a572)=>{const _0x3ccd71=_0xf7a97,_0x1abb01={'gFqax':_0x3ccd71(0xd3)};_0x57a572[_0x3ccd71(0x11e)](path[_0x3ccd71(0xf4)](__dirname,_0x1abb01[_0x3ccd71(0x135)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0xfd),(_0x1c41f6,_0x1186bc)=>{const _0x62bd1b=_0xf7a97,_0x463f31={'jJBqn':_0x62bd1b(0x10f)+_0x62bd1b(0x14c)};_0x1186bc[_0x62bd1b(0x11e)](path[_0x62bd1b(0xf4)](__dirname,_0x463f31[_0x62bd1b(0x157)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0xb7),(_0x5a55da,_0x38abd9)=>{const _0x21cb7f=_0xf7a97,_0x3c717e={'YNotH':_0x21cb7f(0x123)+_0x21cb7f(0x102)+'l'};_0x38abd9[_0x21cb7f(0x11e)](path[_0x21cb7f(0xf4)](__dirname,_0x3c717e[_0x21cb7f(0x15a)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0x108),(_0x28d5d5,_0x48de51)=>{const _0x44ce2a=_0xf7a97,_0x1a9fb9={'MzQVE':_0x44ce2a(0x145)+_0x44ce2a(0x10e)+'l'};_0x48de51[_0x44ce2a(0x11e)](path[_0x44ce2a(0xf4)](__dirname,_0x1a9fb9[_0x44ce2a(0xb8)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0xd9),(_0x7a9f08,_0x565d60)=>{const _0x1eaeb9=_0xf7a97,_0x4ce526={'alYrN':_0x1eaeb9(0x14a)+_0x1eaeb9(0xef)};_0x565d60[_0x1eaeb9(0x11e)](path[_0x1eaeb9(0xf4)](__dirname,_0x4ce526[_0x1eaeb9(0xf2)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0xdf),(_0x2b29df,_0x13c71c)=>{const _0x10fc37=_0xf7a97,_0xb69a22={'FWFQh':_0x10fc37(0xd6)+_0x10fc37(0xe3)};_0x13c71c[_0x10fc37(0x11e)](path[_0x10fc37(0xf4)](__dirname,_0xb69a22[_0x10fc37(0xc6)]));}),app[_0xf7a97(0x16e)](_0xf7a97(0x107),(_0x4ff6d3,_0x76a325)=>{const _0xc6a979=_0xf7a97,_0xe23c5b={'nNJsn':_0xc6a979(0x12c)+_0xc6a979(0xeb)};_0x76a325[_0xc6a979(0x11e)](path[_0xc6a979(0xf4)](__dirname,_0xe23c5b[_0xc6a979(0x12d)]));}),app[_0xf7a97(0xe6)]((_0x1b0ae8,_0x4395a1)=>{const _0x5d2ee7=_0xf7a97;_0x4395a1[_0x5d2ee7(0x144)]('/');}),app[_0xf7a97(0xf5)](PORT,()=>console[_0xf7a97(0x150)](_0xf7a97(0xc7)+_0xf7a97(0x15e)+_0xf7a97(0x13d)+'t\x20'+PORT));
+const express = require('express');
+const fetch = require('node-fetch');
+const cors = require('cors');
+require('dotenv').config();
+const path = require('path');
+const multer = require('multer');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Konfigurasi Multer untuk menyimpan file di memori
+const upload = multer({ storage: multer.memoryStorage() });
+
+app.use(cors());
+app.use(express.json());
+
+// --- API Groq untuk Chat (Tetap sama) ---
+app.post('/api/chat', async (req, res) => {
+  const { message } = req.body;
+
+  const body = {
+    model: "meta-llama/llama-4-scout-17b-16e-instruct",
+    messages: [
+      {
+        role: "system",
+        content: `Kamu adalah AbidinAI, asisten cerdas yang dikembangkan oleh AbidinAI.
+- Jika pengguna bertanya siapa pembuatmu, jawab bahwa kamu dibuat dan dikembangkan oleh Abidin.
+- Jika pengguna bertanya tentang AbidinAI, jawablah bahwa kamu adalah AI buatan AbidinAI.
+- Jika pengguna bertanya tentang pengembangan AbidinAI, jawablah bahwa AbidinAI masih dalam proses pengembangan.
+- Jika pengguna bertanya tentang asal AbidinAI, jawablah bahwa AbidinAI berasal dari Indonesia.
+- Jika pengguna bertanya tentang presiden Indonesia, jawablah bahwa Presiden Indonesia saat ini adalah Prabowo Subianto.
+
+JANGAN PERNAH mengatakan bahwa kamu dibuat oleh OpenAI.
+Jangan Pernah mengatakan bahwa kamu dibuat oleh Groq ai.
+
+Jika memberikan kode, gunakan tiga backtick (\`\`\`) tanpa tag HTML apapun.`
+      },
+      { role: "user", content: message }
+    ],
+    temperature: 0.7,
+    max_tokens: 1024
+  };
+
+  try {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
+      },
+      body: JSON.stringify(body)
+    });
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content || "Maaf, tidak ada balasan.";
+    res.json({ reply });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// --- API Tambahan untuk Kirim ke Telegram ---
+app.post('/api/telegram', async (req, res) => {
+  const { text } = req.body;
+
+  if (!text) return res.status(400).json({ error: 'Pesan kosong' });
+
+  const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+  const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+  const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+
+  try {
+    const response = await fetch(telegramUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: `🧑 Pesan dari AbidinAI:\n${text}`
+      })
+    });
+
+    const data = await response.json();
+    res.json({ status: "success", data });
+  } catch (error) {
+    res.status(500).json({ status: "error", message: error.message });
+  }
+});
+
+// --- API OCR dan Analisis (Diperbarui) ---
+app.post('/api/ocr', upload.single('image'), async (req, res) => {
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+  if (!req.file) {
+    return res.status(400).json({ error: 'File gambar tidak ditemukan' });
+  }
+
+  // Mengubah buffer gambar menjadi base64
+  const imageBase64 = req.file.buffer.toString('base64');
+  const imageMimeType = req.file.mimetype;
+
+  const payload = {
+    contents: [
+      {
+        parts: [
+          {
+            text: "Lihat gambar ini. Jawablah pertanyaan dari gambar ini dengan akurat, atau jelaskan isinya. Berikan jawaban yang relevan dan mudah dipahami."
+          },
+          {
+            inline_data: {
+              mime_type: imageMimeType,
+              data: imageBase64,
+            },
+          },
+        ]
+      }
+    ]
+  };
+
+  try {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    const geminiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, saya tidak dapat memahami isi gambar ini. Mohon coba lagi dengan gambar yang lebih jelas.";
+    
+    res.json({ reply: geminiReply });
+  } catch (error) {
+    console.error("Kesalahan Analisis Gambar:", error);
+    res.status(500).json({ error: 'Gagal menganalisis gambar', details: error.message });
+  }
+});
+
+// --- API untuk fitur Riset Mendalam ---
+app.post('/api/research', async (req, res) => {
+  const { query } = req.body;
+  if (!query) return res.status(400).json({ error: 'Query tidak ditemukan' });
+
+  let results = { wikipedia: {}, openalex: {} };
+
+  // --- Cari di Wikipedia ---
+  try {
+    const wikiUrl = `https://id.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
+    const wikiRes = await fetch(wikiUrl);
+    const wikiData = await wikiRes.json();
+    if (wikiData.title && wikiData.type !== 'disambiguation') {
+      results.wikipedia = {
+        title: wikiData.title,
+        extract: wikiData.extract,
+        link: wikiData.content_urls.desktop.page
+      };
+    } else {
+      results.wikipedia.message = "Tidak ada hasil yang jelas dari Wikipedia.";
+    }
+  } catch (error) {
+    results.wikipedia.message = `Gagal mencari di Wikipedia: ${error.message}`;
+  }
+
+  // --- Cari di OpenAlex ---
+  try {
+    // URL OpenAlex untuk mencari works (artikel, buku, dll)
+    const openAlexUrl = `https://api.openalex.org/works?search=${encodeURIComponent(query)}`;
+    const openAlexRes = await fetch(openAlexUrl);
+    const openAlexData = await openAlexRes.json();
+    if (openAlexData.results && openAlexData.results.length > 0) {
+      // Ambil 3 hasil teratas
+      const topResults = openAlexData.results.slice(0, 3).map(item => ({
+        title: item.title,
+        abstract: item.abstract_inverted_index ? Object.values(item.abstract_inverted_index).flat().join(' ').replace(/_i/g, '') : "Tidak ada abstrak",
+        doi: item.doi,
+        publication_date: item.publication_date
+      }));
+      results.openalex = topResults;
+    } else {
+      results.openalex.message = "Tidak ada hasil yang relevan dari OpenAlex.";
+    }
+  } catch (error) {
+    results.openalex.message = `Gagal mencari di OpenAlex: ${error.message}`;
+  }
+
+  res.json(results);
+});
+
+// --- API Obrolan Sepuasnya dengan Groq (Tidak membatasi `max_tokens`) ---
+app.post('/api/unlimited-chat', async (req, res) => {
+  const { message } = req.body;
+  if (!message) return res.status(400).json({ error: 'Pesan kosong' });
+
+  const body = {
+    model: "meta-llama/llama-4-scout-17b-16e-instruct", // Anda bisa gunakan model Groq lainnya
+    messages: [
+      {
+        role: "system",
+        content: "Anda adalah AbidinAI, asisten cerdas yang ramah dan informatif. Tanggapi permintaan pengguna secara mendalam dan komprehensif tanpa batasan token."
+      },
+      { role: "user", content: message }
+    ],
+    temperature: 0.7,
+    // Di sini kita tidak menyertakan max_tokens untuk memungkinkan respons yang lebih panjang.
+  };
+
+  try {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
+      },
+      body: JSON.stringify(body)
+    });
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content || "Maaf, saya tidak bisa memberikan balasan saat ini.";
+    res.json({ reply });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// --- Serve file statis (Tetap sama) ---
+app.use(express.static(path.join(__dirname)));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'private/login.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'private/register.html')));
+app.get('/dasboard', (req, res) => res.sendFile(path.join(__dirname, 'private/dasboard.html')));
+app.get('/alarm', (req, res) => res.sendFile(path.join(__dirname, 'private/alarm.html')));
+app.get('/dokter', (req, res) => res.sendFile(path.join(__dirname, 'private/dokter.html')));
+app.get('/obrolan', (req, res) => res.sendFile(path.join(__dirname, 'private/obrolan.html')));
+app.get('/obrolanfull', (req, res) => res.sendFile(path.join(__dirname, 'private/obrolanfull.html')));
+
+// fallback
+app.use((req, res) => res.redirect('/'));
+
+app.listen(PORT, () => console.log(`🚀 AbidinAI Server jalan di port ${PORT}`));
