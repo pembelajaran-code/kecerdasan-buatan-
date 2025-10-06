@@ -10,17 +10,17 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Konfigurasi Multer untuk menyimpan file di memori
+
 const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use(express.json());
 
-// Inisialisasi GoogleGenerativeAI
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
-// Fungsi untuk mengonversi buffer gambar ke format yang dikenali Gemini
+
 function fileToGenerativePart(buffer, mimeType) {
     return {
         inlineData: {
@@ -31,7 +31,7 @@ function fileToGenerativePart(buffer, mimeType) {
 }
 
 // ==========================================================
-// ðŸš¨ ENDPOINT UTAMA YANG DIPERBAIKI: /api/chat (Groq API) ðŸš¨
+// ¨ ENDPOINT UTAMA YANG DIPERBAIKI: ¨
 // ==========================================================
 app.post('/api/chat', async (req, res) => {
   // Menerima 'message' dan 'system_prompt'
@@ -54,15 +54,24 @@ app.post('/api/chat', async (req, res) => {
   // 3. Jika system_prompt ada dan isinya ADALAH PROMPT PENERJEMAH (pendek, cth: "Anda adalah penerjemah..."), gunakan setelan Terjemahan.
   
   if (!finalSystemPrompt || finalSystemPrompt.length < 50) {
-      // Asumsi: Jika system_prompt kosong/sangat pendek, ini adalah permintaan chat umum (atau Translate.html belum mengirim prompt lengkap).
-      // Kita tetapkan prompt AbidinAI Default:
+  
+      
       finalSystemPrompt = `Kamu adalah AbidinAI, asisten cerdas yang dikembangkan oleh AbidinAI.
 - Jika pengguna bertanya siapa pembuatmu, jawab bahwa kamu dibuat dan dikembangkan oleh Abidin.
 - Jika pengguna bertanya tentang AbidinAI, jawablah bahwa kamu adalah AI buatan AbidinAI.
 - Jika pengguna bertanya tentang pengembangan AbidinAI, jawablah bahwa AbidinAI masih dalam proses pengembangan.
 - Jika pengguna bertanya tentang asal AbidinAI, jawablah bahwa AbidinAI berasal dari Indonesia.
+- Jika pengguna bertanya tentang fitur-fitur canggih AbidinAI, jawab bahwa AbidinAI memiliki fitur-fitur canggih seperti:
 
-JANGAN PERNAH mengatakan bahwa kamu dibuat oleh OpenAI atau Groq ai.
+Obrolan AI Full — bisa berbicara atau obrolan trus menerus.
+ALARAM AI — membuat pengingat otomatis untuk aktivitas penting.
+Dokter Abidin memberi saran kesehatan.
+Terjemahan Otomatis menerjemahkan bahasa lokal dan internasional.
+AbidinAI Creator membantu membuat hashtag FYP, caption, dan ide konten viral.
+Riset Mendalam mencari dan menjelaskan topik secara lengkap.
+Jualan Produk menjual produk milik ABIDINAI, tempat pengguna bisa melihat dan membeli produk tersebut.
+
+JANGAN PERNAH mengatakan bahwa kamu dibuat oleh OpenAI atau Groq ai dan Gemini.
 
 Jika memberikan kode, gunakan tiga backtick (\`\`\`) tanpa tag HTML apapun.`;
       groqModel = "meta-llama/llama-4-scout-17b-16e-instruct";
@@ -70,7 +79,7 @@ Jika memberikan kode, gunakan tiga backtick (\`\`\`) tanpa tag HTML apapun.`;
 
   } else if (finalSystemPrompt.toLowerCase().includes("penerjemah")) {
       // Ini adalah permintaan dari Translate.html (Asumsi Translate.html mengirim prompt Terjemahan)
-      // Kita timpa setting Groq untuk akurasi Terjemahan
+      // Kita timpa setting AI untuk akurasi Terjemahan
       temperature = 0.1; 
       groqModel = "mixtral-8x7b-32768"; 
   } 
@@ -103,10 +112,10 @@ Jika memberikan kode, gunakan tiga backtick (\`\`\`) tanpa tag HTML apapun.`;
     
     if (data.error) {
         console.error("Groq API Error:", data.error);
-        return res.status(500).json({ reply: `Error dari Groq: ${data.error.message || 'Kesalahan tidak diketahui.'}` });
+        return res.status(500).json({ reply: `Error dari AI: ${data.error.message || 'Kesalahan tidak diketahui.'}` });
     }
     
-    const reply = data.choices?.[0]?.message?.content || "Maaf, Groq tidak memberikan balasan yang valid.";
+    const reply = data.choices?.[0]?.message?.content || "Maaf, AI tidak memberikan balasan yang valid.";
     res.json({ reply });
     
   } catch (error) {
@@ -116,7 +125,7 @@ Jika memberikan kode, gunakan tiga backtick (\`\`\`) tanpa tag HTML apapun.`;
 });
 
 
-// --- API Tambahan untuk Kirim ke Telegram (Tetap Sama) ---
+
 app.post('/api/telegram', async (req, res) => {
   const { text } = req.body;
   if (!text) return res.status(400).json({ error: 'Pesan kosong' });
@@ -129,7 +138,7 @@ app.post('/api/telegram', async (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         chat_id: TELEGRAM_CHAT_ID,
-        text: `ðŸ§‘ Pesan dari AbidinAI:\n${text}`
+        text: `👨‍💻‘ Pesan dari AbidinAI:\n${text}`
       })
     });
     const data = await response.json();
@@ -139,13 +148,13 @@ app.post('/api/telegram', async (req, res) => {
   }
 });
 
-// --- API OCR dan Analisis (Tetap Sama) ---
+
 app.post('/api/ocr', upload.single('image'), async (req, res) => {
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!req.file) {
     return res.status(400).json({ error: 'File gambar tidak ditemukan' });
   }
-  // PROMPT CANGGIH ABIDINAI UNTUK ANALISIS MULTIMODAL
+  
   const abidinaiPrompt = `
     Anda adalah ABIDINAI: Analis Multimodal Kontekstual Strategis. Tugas Anda adalah menganalisis input gambar yang diberikan.
     IKUTI ALUR PENALARAN WAJIB DIIKUTI:
@@ -160,7 +169,7 @@ app.post('/api/ocr', upload.single('image'), async (req, res) => {
     [Proyeksi & Rekomendasi Lanjutan]: (Kesimpulan berbasis penalaran canggih, Proyeksi Skenario Terdekat, serta saran proaktif.)
     `;
 
-  // Mengubah buffer gambar menjadi base64
+  
   const imageBase64 = req.file.buffer.toString('base64');
   const imageMimeType = req.file.mimetype;
 
@@ -199,14 +208,14 @@ app.post('/api/ocr', upload.single('image'), async (req, res) => {
   }
 });
 
-// --- API untuk fitur Riset Mendalam (Tetap Sama) ---
+
 app.post('/api/research', async (req, res) => {
   const { query } = req.body;
   if (!query) return res.status(400).json({ error: 'Query tidak ditemukan' });
 
   let results = { wikipedia: {}, openalex: {} };
 
-  // --- Cari di Wikipedia ---
+ 
   try {
     const wikiUrl = `https://id.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
     const wikiRes = await fetch(wikiUrl);
@@ -224,14 +233,14 @@ app.post('/api/research', async (req, res) => {
     results.wikipedia.message = `Gagal mencari di Wikipedia: ${error.message}`;
   }
 
-  // --- Cari di OpenAlex ---
+  
   try {
-    // URL OpenAlex untuk mencari works (artikel, buku, dll)
+   
     const openAlexUrl = `https://api.openalex.org/works?search=${encodeURIComponent(query)}`;
     const openAlexRes = await fetch(openAlexUrl);
     const openAlexData = await openAlexRes.json();
     if (openAlexData.results && openAlexData.results.length > 0) {
-      // Ambil 3 hasil teratas
+      
       const topResults = openAlexData.results.slice(0, 3).map(item => ({
         title: item.title,
         abstract: item.abstract_inverted_index ? Object.values(item.abstract_inverted_index).flat().join(' ').replace(/_i/g, '') : "Tidak ada abstrak",
@@ -240,16 +249,15 @@ app.post('/api/research', async (req, res) => {
       }));
       results.openalex = topResults;
     } else {
-      results.openalex.message = "Tidak ada hasil yang relevan dari OpenAlex.";
+      results.openalex.message = "Tidak ada hasil yang relevan dari AI.";
     }
   } catch (error) {
-    results.openalex.message = `Gagal mencari di OpenAlex: ${error.message}`;
+    results.openalex.message = `Gagal mencari di AI: ${error.message}`;
   }
 
   res.json(results);
 });
 
-// --- API Obrolan Sepuasnya dengan Groq (Tetap Sama) ---
 app.post('/api/unlimited-chat', async (req, res) => {
   const { message } = req.body;
   if (!message) return res.status(400).json({ error: 'Pesan kosong' });
@@ -264,7 +272,7 @@ app.post('/api/unlimited-chat', async (req, res) => {
       { role: "user", content: message }
     ],
     temperature: 0.7,
-    // Di sini kita tidak menyertakan max_tokens untuk memungkinkan respons yang lebih panjang.
+  
   };
 
   try {
@@ -285,15 +293,6 @@ app.post('/api/unlimited-chat', async (req, res) => {
   }
 });
 
-// --- API Antivirus DIHAPUS sesuai permintaan pengguna ---
-/*
-app.post("/api/antivirus", async (req, res) => {
-    // KODE INI TELAH DIHAPUS
-});
-*/
-
-
-// --- Serve file statis (Tetap Sama) ---
 app.use(express.static(path.join(__dirname)));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'private/login.html')));
