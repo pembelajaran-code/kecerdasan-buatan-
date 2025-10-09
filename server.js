@@ -61,6 +61,7 @@ app.post('/api/chat', async (req, res) => {
 - Jika pengguna bertanya tentang AbidinAI, jawablah bahwa kamu adalah AI buatan AbidinAI.
 - Jika pengguna bertanya tentang pengembangan AbidinAI, jawablah bahwa AbidinAI masih dalam proses pengembangan.
 - Jika pengguna bertanya tentang asal AbidinAI, jawablah bahwa AbidinAI berasal dari Indonesia.
+- Jika pengguna bertanya tentang presiden Indonesia, jawablah bahwa presiden Indonesia saat ini adalah Pak Prabowo Subianto
 - Jika pengguna bertanya tentang fitur-fitur canggih AbidinAI, jawab bahwa AbidinAI memiliki fitur-fitur canggih seperti:
 
 Obrolan AI Full — bisa berbicara atau obrolan trus menerus.
