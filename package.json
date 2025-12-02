@@ -1,9 +1,9 @@
 {
   "name": "abidinai",
   "version": "1.0.0",
-  "main": "app_abidinai.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app_abidinai.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -13,6 +13,7 @@
     "multer": "^2.0.0"
   }
 }
+
 
 
 
