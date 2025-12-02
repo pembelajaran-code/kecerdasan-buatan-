@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "app_abidinai_v5.js",
+      "src": "app_abidinai.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app_abidinai_v5.js"
+      "dest": "app_abidinai.js"
     }
   ]
 }
