@@ -58,14 +58,12 @@
       color: #4f46e5;
     }
 
-    /* KODE MODIFIKASI DIMULAI DI SINI */
     .sidebar-title span {
-      /* Pastikan teks AbidinAI/Balas AI di sidebar mengikuti gambar di chat-header */
+      
       font-weight: 700; 
-      color: #5A4FF3; /* Mengambil warna ungu dari logo */
-      font-size: 22px; /* Disesuaikan agar lebih menonjol */
+      color: #5A4FF3; 
+      font-size: 22px; 
     }
-    /* KODE MODIFIKASI BERAKHIR DI SINI */
 
 
     .sidebar-menu {
@@ -605,7 +603,7 @@
       font-weight: 500;
     }
 
-    /* Animations */
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -615,7 +613,7 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Warning Overlay */
+  
     .warning-overlay {
       position: fixed;
       top: 0;
@@ -635,7 +633,7 @@
       filter: blur(10px) !important;
     }
 
-    /* Hapus kelas no-select dan ganti dengan selectable */
+    
     .selectable {
       -webkit-touch-callout: text;
       -webkit-user-select: text;
@@ -697,7 +695,7 @@
       }
     }
 
-    /* New styles for memory controls */
+    
     .memory-controls {
       display: flex;
       justify-content: flex-end;
@@ -759,7 +757,7 @@
       color: #4f46e5;
     }
 
-    /* GAYA UNTUK TOMBOL BAGIKAN (SHARE) */
+    
     .action-btn.share {
       color: #10b981;
     }
@@ -768,7 +766,7 @@
       color: #f59e0b;
     }
 
-    /* GAYA BARU UNTUK PREVIEW 5 GAMBAR (Di dalam Input Box) */
+    
     #multiple-images-preview {
       display: flex;
       flex-wrap: wrap;
@@ -779,7 +777,7 @@
       background-color: #f9fafb;
       margin-bottom: 8px;
       width: 100%;
-      align-items: center; /* Tambahkan ini agar vertikal align rapi */
+      align-items: center; 
     }
 
     .image-preview-item {
@@ -816,14 +814,14 @@
       padding: 0;
       box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
-    /* --- END GAYA BARU PREVIEW GAMBAR --- */
+    
 
-    /* Gaya untuk modal Riset Mendalam */
+    
     .modal-body-research {
         padding: 10px;
     }
 
-    /* Gaya untuk multiple file preview (Di dalam Modal OCR) */
+    
     .multiple-preview-container {
       display: flex;
       flex-wrap: wrap;
@@ -861,9 +859,9 @@
       font-weight: bold;
     }
 
-    /* --- Gaya Tambahan untuk Panel Shortcut Baru --- */
+  
     .title-shortcut {
-        font-size: 20px; /* Disesuaikan agar tidak terlalu besar di header chat */
+        font-size: 20px; 
         font-weight: 700;
         margin-bottom: 12px;
         color: #2d3748;
@@ -883,8 +881,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        width: 100%; /* Lebar penuh dalam chat-header */
-        max-width: 400px; /* Batasi lebar agar tetap rapi */
+        width: 100%; 
+        max-width: 400px; 
         margin: 0 auto 15px auto;
     }
 
@@ -952,14 +950,12 @@
         min-width: 20px;
         min-height: 20px;
     }
-    /* --- Akhir Gaya Tambahan untuk Panel Shortcut Baru --- */
-
-    /* KODE CSS TAMBAHAN DARI USER UNTUK LOGO BARU */
+    
     .header {
         width: 100%;
         text-align: center;
-        padding: 0; /* Hapus padding yang tumpang tindih */
-        margin-bottom: 10px; /* Jarak antara header logo dan shortcut box */
+        padding: 0;
+        margin-bottom: 10px; 
     }
 
     .logo-circle {
@@ -992,11 +988,11 @@
         font-size: 15px;
         color: #666;
     }
-    /* AKHIR KODE CSS TAMBAHAN */
+    
   </style>
 
   <script>
-    // ** MODIFIKASI: Cek token login saat halaman dimuat **
+    
     if (!localStorage.getItem("abidinai_token")) {
       window.location.href = "../index.html";
     }
@@ -1068,7 +1064,7 @@
         <button class="close-btn" id="closeDeepResearchModal">&times;</button>
       </div>
       <div class="modal-body-research">
-        <p>Masukkan pertanyaan Anda. Balas AI akan mengumpulkan informasi mendalam dari basis pengetahuan global dan riset ilmiah terbaru..</p>
+        <p>Masukkan pertanyaan Anda. AbidinAI akan mengumpulkan informasi mendalam dari basis pengetahuan global dan riset ilmiah terbaru..</p>
         <div style="margin-top: 15px;">
           <input type="text" id="researchQueryInput" placeholder="Contoh: Efek rumah kaca..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
         </div>
@@ -1099,7 +1095,7 @@
     <div class="sidebar-header">
       <div class="sidebar-title">
         <i class="fas fa-robot"></i>
-        <span>Balas AI</span>
+        <span>ABIDINAI</span>
         </div>
     </div>
 
@@ -1354,19 +1350,16 @@
       let db = null;
       let ocrExtractedText = '';
       let ocrImageURL = null;
-      let selectedFiles = []; // Array untuk menyimpan file yang dipilih dari modal
-      let isShortcutMenuOpen = false; // Status untuk menu shortcut baru
+      let selectedFiles = []; 
+      let isShortcutMenuOpen = false; 
 
-      // VARIABLE BARU UNTUK MENYIMPAN GAMBAR YANG DIUPLOAD
       let uploadedImages = []; // Format: [{ file: File, dataURL: string }]
 
       const devToolsState = {open: false, orientation: null};
       const devToolsThreshold = 160;
-
-      // --- MODIFIKASI: Izinkan Pilih Teks Hanya di Android ---
+      
       const isAndroid = /android/i.test(navigator.userAgent);
 
-      // Jika BUKAN Android (PC/Laptop), maka terapkan blokir
       if (!isAndroid) {
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('selectstart', e => e.preventDefault());
@@ -1542,7 +1535,7 @@
           const chatbox = document.getElementById("chatbox");
 
           if (messages.length === 0) {
-            // Biarkan chatbox kosong, tidak perlu menambahkan pesan apa pun.
+            
           } else {
             messages.forEach(msg => {
               const messageClass = msg.sender === 'Anda' ? 'user-message' : 'ai-message';
@@ -1594,14 +1587,14 @@
         return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       }
 
-      // ** MODIFIKASI: FUNGSI LOGOUT BARU **
+    
       window.logout = function() {
           localStorage.removeItem("abidinai_token");
           clearConversationFromDB();
           window.location.href = "../index.html";
       };
 
-      // ** FUNGSI BARU UNTUK SHORTCUT MENU **
+    
       window.toggleShortcutMenu = function() {
         const menu = document.getElementById("dropdownShortcutMenu");
         if (isShortcutMenuOpen) {
@@ -1887,12 +1880,12 @@
           }
         }
 
-        // Fungsi untuk memproses satu gambar
+        
         async function processSingleImage(file, index) {
           const formData = new FormData();
           formData.append('image', file);
 
-          // NOTE: Endpoint API /api/ocr harus tersedia di backend Anda.
+          
           const response = await fetch("/api/ocr", {
             method: "POST",
             body: formData
@@ -2088,7 +2081,7 @@
           <div class="message-content">
             <div class="typing-indicator">
               <div class="loading"></div>
-              Balas AI sedang melakukan riset...
+               AbidinAI sedang melakukan riset...
             </div>
           </div>
         `;
@@ -2227,7 +2220,7 @@
             <div class="message-text">
               <div class="typing-indicator">
                 <div class="loading"></div>
-                Mendengarkan...
+                AbidinAI Mendengarkan...
               </div>
             </div>
           </div>
@@ -2346,7 +2339,7 @@
           // Hapus konten pesan AI yang lama dan ganti dengan indikator mengetik
           messageTextElement.innerHTML = `<div class="typing-indicator">
               <div class="loading"></div>
-              Balas AI sedang mengetik ulang...
+              AbidinAI sedang mengetik ulang...
           </div>`;
           messageDiv.classList.remove('ai-message');
           messageDiv.classList.add('user-message');
@@ -2458,7 +2451,7 @@
           <div class="message-content">
             <div class="typing-indicator">
               <div class="loading"></div>
-              Balas AI sedang ${uploadedImages.length > 0 ? 'menganalisis gambar dan mengetik...' : 'mengetik...'}
+               AbidinAI sedang ${uploadedImages.length > 0 ? 'menganalisis gambar dan mengetik...' : 'mengetik...'}
             </div>
           </div>
         `;
@@ -2516,7 +2509,7 @@
 
         const maintenanceDiv = addMessage(
           'Balas AI',
-          formatBoldText('<i class="fas fa-tools"></i> Maaf, server Balas AI sedang dalam proses perbaikan dan pemeliharaan. Silakan coba lagi dalam beberapa saat. Terima kasih atas pengertiannya! 🔧'),
+          formatBoldText('<i class="fas fa-tools"></i> Maaf, server AbidinAI sedang dalam proses perbaikan dan pemeliharaan. Silakan coba lagi dalam beberapa saat. Terima kasih atas pengertiannya! 🔧'),
           'ai-message'
         );
 
@@ -2548,7 +2541,7 @@
               <div class="avatar ai-avatar"><i class="fas fa-robot"></i></div>
               <div class="message-content">
                 <div class="message-header">
-                  <span class="message-sender">Balas AI</span>
+                  <span class="message-sender">AbidinAI</span>
                   <span class="message-time">${getCurrentTime()}</span>
                 </div>
                 <div class="message-text" id="${messageId}-text"></div>
