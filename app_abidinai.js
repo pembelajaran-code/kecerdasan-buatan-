@@ -35,13 +35,6 @@ function fileToGenerativePart(buffer, mimeType) {
 }
 
 // ==========================================================
-// 🏯 ABEDINAI JAWA 2.0 – SISTEM TRANSLITERASI RESMI HANACARAKA
-// Dikembangkan oleh Nalek (AbidinAI Project)
-// ==========================================================
-
-// ==========================
-// 🕊️ DATA LATIHAN AKSARA JAWA (javaneseDB menggantikan javaneseTrainingData, aksara, dan sandhangan)
-// ==========================
 const javaneseDB = {
   context: `
 Kamu adalah *AbedinAI Jawa*, asisten AI pelatih aksara Hanacaraka (Aksara Jawa).
@@ -74,14 +67,12 @@ Sebagai AbidinAI Jawa, jika pengguna bertanya siapa pembuatmu, jawab bahwa kamu 
 };
 
 // ==========================
-// ⚙️ TRANSLITERASI ARAH 1: AKSARA → LATIN (Menggantikan fungsi transliterate lama)
-// ==========================
 function aksaraKeLatin(teks) {
   const { aksara, sandhangan } = javaneseDB;
   let hasil = "";
   let skip = false;
 
-  const chars = Array.from(teks); // Menggunakan Array.from untuk penanganan karakter Unicode
+  const chars = Array.from(teks); 
 
   for (let i = 0; i < chars.length; i++) {
     if (skip) { skip = false; continue; }
@@ -113,7 +104,7 @@ function aksaraKeLatin(teks) {
     hasil += c;
   }
 
-  // Kapitalisasi sesuai permintaan
+  
   if (hasil.length > 0) {
       hasil = hasil.replace(/^ha/, "A"); 
       hasil = hasil.charAt(0).toUpperCase() + hasil.slice(1);
@@ -123,7 +114,6 @@ function aksaraKeLatin(teks) {
 }
 
 // ==========================
-// ⚙️ TRANSLITERASI ARAH 2: LATIN → AKSARA
 // ==========================
 function latinKeAksara(teks) {
   const { aksara, sandhangan } = javaneseDB;
@@ -199,7 +189,7 @@ function latinKeAksara(teks) {
 }
 
 
-// 🔎 Kata Kunci Pendeteksi Topik Jawa (Diambil dari versi sebelumnya untuk stabilitas)
+
 const javanese_keywords = [
     // Bahasa & Aksara
     "bahasa jawa", "aksara jawa", "hanacaraka", "carakan", "sandhangan",
@@ -256,7 +246,6 @@ function isJavaneseTopic(message) {
 }
 
 // ==========================================================
-// 🆕 FITUR BARU: DAFTAR DOMAIN DAN SUMBER TERPERCAYA (WHITELIST)
 // ==========================================================
 
 const trustedDomains = [
@@ -311,29 +300,27 @@ const trustedDomains = [
     "politifact.com", "fullfact.org", "afp.com", "bbc.com/factcheck"
 ];
 
-// Fungsi untuk mendapatkan string daftar domain (untuk dimasukkan ke System Prompt)
+
 function getTrustedDomainsString() {
     return trustedDomains.join(', ');
 }
 
 
 // ==========================================================
-// ⚙️ FUNGSI BANTUAN GROQ (Dibuat untuk digunakan kembali oleh OCR)
-// [PENYEMPURNAAN LOGIKA PEMBERIAN LINK DI SYSTEM PROMPT DI SINI]
 // ==========================================================
 async function getGroqResponse(message, systemPromptOverride = null) {
   if (!process.env.GROQ_API_KEY) {
       throw new Error("GROQ_API_KEY belum dikonfigurasi di file .env.");
   }
   
-  // Tentukan System Prompt default yang Anda gunakan di /api/chat
+  
   let finalSystemPrompt = systemPromptOverride;
   let groqModel = "llama3-8b-8192"; // Default (Creator)
   let temperature = 0.8; // Default (Creator)
 
-  // System Prompt Default
+  
   if (!finalSystemPrompt || finalSystemPrompt.length < 50) {
-      // 📝 TAMBAHAN ATURAN DAN DOMAIN WHITELIST DI SINI
+     
       const domainList = getTrustedDomainsString();
       
       finalSystemPrompt = `
@@ -977,6 +964,7 @@ app.get('/obrolan', (req, res) => res.sendFile(path.join(__dirname, 'private/obr
 app.get('/obrolanfull', (req, res) => res.sendFile(path.join(__dirname, 'private/obrolanfull.html')));
 app.get('/translate', (req, res) => res.sendFile(path.join(__dirname, 'private/translate.html')));
 app.get('/creator', (req, res) => res.sendFile(path.join(__dirname, 'private/creator.html')));
+app.get('/aplikasi', (req, res) => res.sendFile(path.join(__dirname, 'private/aplikasi.html')));
 // fallback
 app.use((req, res) => res.redirect('/'));
 
