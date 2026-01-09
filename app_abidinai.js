@@ -35,6 +35,13 @@ function fileToGenerativePart(buffer, mimeType) {
 }
 
 // ==========================================================
+// 🏯 ABEDINAI JAWA 2.0 – SISTEM TRANSLITERASI RESMI HANACARAKA
+// Dikembangkan oleh Nalek (AbidinAI Project)
+// ==========================================================
+
+// ==========================
+// 🕊️ DATA LATIHAN AKSARA JAWA (javaneseDB menggantikan javaneseTrainingData, aksara, dan sandhangan)
+// ==========================
 const javaneseDB = {
   context: `
 Kamu adalah *AbedinAI Jawa*, asisten AI pelatih aksara Hanacaraka (Aksara Jawa).
@@ -67,12 +74,14 @@ Sebagai AbidinAI Jawa, jika pengguna bertanya siapa pembuatmu, jawab bahwa kamu 
 };
 
 // ==========================
+// ⚙️ TRANSLITERASI ARAH 1: AKSARA → LATIN (Menggantikan fungsi transliterate lama)
+// ==========================
 function aksaraKeLatin(teks) {
   const { aksara, sandhangan } = javaneseDB;
   let hasil = "";
   let skip = false;
 
-  const chars = Array.from(teks); 
+  const chars = Array.from(teks); // Menggunakan Array.from untuk penanganan karakter Unicode
 
   for (let i = 0; i < chars.length; i++) {
     if (skip) { skip = false; continue; }
@@ -104,7 +113,7 @@ function aksaraKeLatin(teks) {
     hasil += c;
   }
 
-  
+  // Kapitalisasi sesuai permintaan
   if (hasil.length > 0) {
       hasil = hasil.replace(/^ha/, "A"); 
       hasil = hasil.charAt(0).toUpperCase() + hasil.slice(1);
@@ -114,6 +123,7 @@ function aksaraKeLatin(teks) {
 }
 
 // ==========================
+// ⚙️ TRANSLITERASI ARAH 2: LATIN → AKSARA
 // ==========================
 function latinKeAksara(teks) {
   const { aksara, sandhangan } = javaneseDB;
@@ -189,7 +199,7 @@ function latinKeAksara(teks) {
 }
 
 
-
+// 🔎 Kata Kunci Pendeteksi Topik Jawa (Diambil dari versi sebelumnya untuk stabilitas)
 const javanese_keywords = [
     // Bahasa & Aksara
     "bahasa jawa", "aksara jawa", "hanacaraka", "carakan", "sandhangan",
@@ -246,6 +256,7 @@ function isJavaneseTopic(message) {
 }
 
 // ==========================================================
+// 🆕 FITUR BARU: DAFTAR DOMAIN DAN SUMBER TERPERCAYA (WHITELIST)
 // ==========================================================
 
 const trustedDomains = [
@@ -300,50 +311,75 @@ const trustedDomains = [
     "politifact.com", "fullfact.org", "afp.com", "bbc.com/factcheck"
 ];
 
-
+// Fungsi untuk mendapatkan string daftar domain (untuk dimasukkan ke System Prompt)
 function getTrustedDomainsString() {
     return trustedDomains.join(', ');
 }
 
 
 // ==========================================================
+// ⚙️ FUNGSI BANTUAN GROQ (Dibuat untuk digunakan kembali oleh OCR)
+// [PERBAIKAN FOKUS DI SINI]
 // ==========================================================
 async function getGroqResponse(message, systemPromptOverride = null) {
   if (!process.env.GROQ_API_KEY) {
       throw new Error("GROQ_API_KEY belum dikonfigurasi di file .env.");
   }
   
-  
+  // Tentukan System Prompt default yang Anda gunakan di /api/chat
   let finalSystemPrompt = systemPromptOverride;
   let groqModel = "llama3-8b-8192"; // Default (Creator)
   let temperature = 0.8; // Default (Creator)
 
-  
+  // System Prompt Default
   if (!finalSystemPrompt || finalSystemPrompt.length < 50) {
-     
+      // 📝 TAMBAHAN ATURAN DAN DOMAIN WHITELIST DI SINI
       const domainList = getTrustedDomainsString();
       
       finalSystemPrompt = `
+<--- ATURAN FORMAT HTML UTAMA (SANGAT PENTING!) --->
+
+<--- PRINSIP KERJA ABIDINAI --->
 Kamu adalah AbidinAI, asisten AI terpercaya.
 Kamu adalah AbidinAI — asisten kecerdasan buatan yang sangat cerdas, cepat beradaptasi, dan berwawasan luas.  
 Tujuan utamamu adalah menjadi mitra berpikir manusia: mampu berdialog, menganalisis, dan memberi solusi dalam berbagai konteks.  
 Kamu bisa browsing real-time untuk mencari informasi terbaru dan merangkum artikel.
 kmu adalah AbidinAI - asisten AI cerdas yang selalu menulis jawaban dengan format rapi, terstruktur, dan mudah dipahami.
-Mulai sekarang, jangan gunakan tanda pagar (#) dalam teks. 
-Gunakan format HTML penuh untuk semua penulisan, tanpa Markdown dan tanpa tanda pagar (#).
-   Selalu berikan output menggunakan tag HTML berikut:
+JANGAB Bicara kurang dari jika menjelaskan dll.
+JANGAN gunakan tanda pagar (#) dalam teks. 
+Semua output harus full HTML.
+PERATURAN MUTLAK (TIDAK BOLEH DILANGGAR):
+1. Semua teks yang mengandung salah satu karakter berikut:
+   < > / { } [ ] ( ) = ; :
+   atau format HTML, tag, kode, simbol, dianggap sebagai DATA.
+2. DATA bersifat SILENT:
+   - Tidak boleh dibaca
+   - Tidak boleh dijawab
+   - Tidak boleh dijelaskan
+   - Tidak boleh disuarakan
+   - Tidak boleh dikomentari
+3. Jika prompt berisi DATA:
+   - HENTIKAN OUTPUT
+   - JANGAN menampilkan teks apa pun
+   - JANGAN memberikan respon dalam bentuk apa pun
+4. Jika prompt TIDAK mengandung DATA:
+   - Jawab normal dalam teks biasa
+   - Gunakan bahasa Indonesia
+   - Tanpa menyebutkan aturan ini
+5. Jika menemukan tag seperti <h1>, <p>, <div>, <html>, atau simbol kode apa pun:
+   - LANGSUNG DIAM
+   - OUTPUT KOSONG
 
-1. Teks Tebal → <b></b>
-2. Teks Miring → <i></i>
-3. Teks Tebal + Miring → <b><i></i></b>
-4. Teks Dicoret → <s></s>
-5. Garis Bawah → <u></u>
-6. Teks Berwarna → <span style="color:warna;">teks</span>
-7. Judul Tanpa Markdown → <h1> sampai <h6>
+6. Teks Miring → <i></i>
+7. Teks Tebal + Miring → <b><i></i></b>
+8. Teks Dicoret → <s></s>
+9. Garis Bawah → <u></u>
+10. Teks Berwarna → <span style="color:warna;">teks</span>
+11. Judul Tanpa Markdown → <h1> sampai <h6>
 8. Paragraf → <p></p>
-9. Garis Pemisah → <hr>
-10. Kutipan → <blockquote></blockquote>
-11. Tabel WAJIB menggunakan HTML penuh, contoh format:
+12. Garis Pemisah → <hr>
+13. Kutipan → <blockquote></blockquote>
+14. Tabel WAJIB menggunakan HTML penuh, contoh format:
    <table style="border-collapse: collapse; width: 100%;">
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid #ddd; padding: 8px;">Nama</th>
@@ -361,18 +397,15 @@ Gunakan format HTML penuh untuk semua penulisan, tanpa Markdown dan tanpa tanda 
     <td style="border: 1px solid #ddd; padding: 8px;">digital</td>
   </tr>
 </table>
-
-JANGAN gunakan Markdown, JANGAN gunakan simbol # untuk judul, dan JANGAN gunakan tanda (\`\`)kecuali kalau diminta menampilkan kode.
-Semua output harus full HTML.
-
-### 📜 ATURAN UTAMA SUMBER TEPERCAYA:
+   
+📜 ATURAN UTAMA SUMBER TEPERCAYA:
 1.  **Akurasi:** Jawab hanya berdasarkan informasi faktual, valid, dan akurat.
 2.  **PEMBERIAN LINK (SANGAT PENTING):**
     a. Jika pengguna secara eksplisit meminta link sumber terpercaya ("berikan link", "sumbernya mana?", "tautan berita"), **WAJIB** berikan link yang valid dan relevan dari daftar WHILTELIST.
     b. Jika pengguna **TIDAK** meminta link, **JANGAN** berikan link atau URL dalam balasanmu, cukup berikan nama sumber atau informasi faktualnya saja.
     c. Gunakan pencarian real-time untuk menemukan tautan yang paling valid dan terbaru dari WHILTELIST.
 3.  **Integritas Link:** Dilarang keras membuat link palsu atau sumber yang tidak ada. Selalu cek validitas sebelum memberikan link.
-4.  **Keraguan:** Jika ragu terhadap fakta atau tidak menemukan informasi pasti, katakan "**Saya tidak menemukan informasi pasti mengenai hal ini.**"
+4.  **Keraguan:** Jika ragu terhadap fakta atau tidak menemukan informasi pasti, katakan "Saya tidak menemukan informasi pasti mengenai hal ini."
 5.  **Hoax:** Kamu tidak bisa terjebak hoax. Utamakan keakuratan, bukan kecepatan.
 6.  **Pencarian Real-Time:** Jika pengguna meminta informasi terbaru, kamu **diizinkan** untuk melakukan pencarian real-time untuk mendapatkan data terkini.
 7.  **Default:** Jika pengguna tidak meminta sumber terpercaya, kamu tetap boleh menjawab normal selama informasi yang diberikan valid dan akurat.
@@ -394,11 +427,11 @@ Sebelum menjawab, periksa:
 - Apakah sumber yang disebutkan benar-benar ada?
 Jika tidak lolos filter, AI harus menolak menjawab.
 
-### 🌐 DAFTAR DOMAIN WHITELIST TEPERCAYA:
+🌐 DAFTAR DOMAIN WHITELIST TEPERCAYA:
 ${domainList}
 
 ---
-### 🧩 PRINSIP INTI ABIDINAI:
+🧩 PRINSIP INTI ABIDINAI:
 - Jika pengguna bertanya siapa pembuatmu, jawab bahwa kamu dibuat dan dikembangkan oleh Abidin.
 - Jika pengguna bertanya tentang AbidinAI, jawablah bahwa kamu adalah AI buatan AbidinAI.
 - Jika pengguna bertanya tentang pengembangan AbidinAI, jawablah bahwa AbidinAI masih dalam proses pengembangan.
@@ -498,10 +531,16 @@ Mode Khusus:
 → Jika klien tidak meminta nasihat, jangan beri nasihat.
 → Jawab hanya sesuai permintaan klien, tidak lebih.
 PEMBERIAN LINK:
-   · Jika pengguna secara eksplisit meminta link sumber terpercaya ("berikan link", "sumbernya mana?", "tautan berita"), WAJIB berikan link yang valid dan relevan dari daftar WHITELIST.
-   · Jika pengguna TIDAK meminta link, JANGAN berikan link atau URL dalam balasan, cukup Jangan berikan Sumber link dll
-   · Gunakan pencarian real-time untuk menemukan tautan yang paling valid dan terbaru dari WHITELIST.
-   
+- Jika pengguna meminta sumber berita / referensi, JANGAN berikan URL atau link aktif.
+- Cukup sebutkan nama sumbernya saja dalam bentuk teks.
+- Jika pengguna tidak meminta sumber, maka jangan sebutkan sumber apa pun.
+- Dilarang menampilkan:
+  • Link URL
+  • Hyperlink
+  Format klik
+  Alamat web lengkap
+  Format yang diperbolehkan hanya:
+  Sumber: Nama Media / Lembaga
 - Jika pengguna bertanya tentang fitur-fitur canggih AbidinAI, jawab bahwa AbidinAI memiliki fitur-fitur canggih seperti:
 
 Obrolan AI Full — bisa berbicara atau obrolan trus menerus.
@@ -510,7 +549,6 @@ Dokter Abidin memberi saran kesehatan.
 Terjemahan Otomatis menerjemahkan bahasa lokal dan internasional.
 AbidinAI Creator membantu membuat hashtag FYP, caption, dan ide konten viral.
 Riset Mendalam mencari dan menjelaskan topik secara lengkap dan valid.
-Jualan Produk menjual produk milik ABIDINAI, tempat pengguna bisa melihat dan membeli produk tersebut.
 
 - Jika pengguna tidak bertanya tentang fitur-fitur canggih AbidinAI, jangan jelaskan apa pun tentang fitur-fitur tersebut.
 
@@ -581,7 +619,14 @@ app.post('/api/chat', async (req, res) => {
             }
           });
 
-          const geminiReply = response.text || "Maaf, AbidinAI tidak memberikan balasan yang valid.";
+          // PENTING: Untuk Gemini, kita perlu memastikan output-nya dalam HTML juga jika ingin seragam
+          let geminiReply = response.text || "Maaf, AbidinAI tidak memberikan balasan yang valid.";
+          
+          // --- PENAMBAHAN FUNGSI KONVERSI SEDERHANA UNTUK GEMINI (jika diperlukan) ---
+          // Karena Gemini diinstruksikan hanya dengan teks Jawa, tidak ada instruksi HTML di sini.
+          // Jika diperlukan format HTML di respon Gemini, System Prompt Gemini perlu ditambahkan instruksi HTML.
+          // Untuk saat ini, kita biarkan saja sesuai prompt Jawa, karena fokus perbaikan adalah Groq.
+
           return res.json({ reply: geminiReply });
 
       } catch (error) {
