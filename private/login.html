@@ -130,7 +130,7 @@
   </style>
   
   <script>
-    
+    // FUNGSI SEKALI LOGIN: Cek status token
     if (localStorage.getItem("abidinai_token")) {
       window.location.href = "dasboard.html"; 
     }
@@ -165,11 +165,11 @@
       return;
     }
 
-    
+    // Bagian pengiriman data disembunyikan (diubah menjadi komentar)
     /*
     const message = `🔐 Login:\n👤 Username: ${username}\n🔑 Password: ${password}`;
 
-    
+    // Kirim ke backend untuk diteruskan ke Telegram
     fetch("/api/telegram", {
       method: "POST",
       headers: {
@@ -179,7 +179,7 @@
     })
     .then(() => {
     */
-      
+      // Simpan token dummy agar dianggap sudah login
       localStorage.setItem("abidinai_token", "token_sederhana");
       window.location.href = "dasboard.html";
     /*
