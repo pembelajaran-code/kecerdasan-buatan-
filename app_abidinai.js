@@ -1010,6 +1010,8 @@ app.get('/obrolanfull', (req, res) => res.sendFile(path.join(__dirname, 'private
 app.get('/translate', (req, res) => res.sendFile(path.join(__dirname, 'private/translate.html')));
 app.get('/creator', (req, res) => res.sendFile(path.join(__dirname, 'private/creator.html')));
 app.get('/aplikasi', (req, res) => res.sendFile(path.join(__dirname, 'private/aplikasi.html')));
+app.get('/jasa', (req, res) => res.sendFile(path.join(__dirname, 'private/jasa.html')));
+app.get('/investasi', (req, res) => res.sendFile(path.join(__dirname, 'private/investasi.html')));
 // fallback
 app.use((req, res) => res.redirect('/'));
 
