@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AbidinAI Voice Assistant</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,6 +71,34 @@
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
       padding: 40px;
       animation: container-glow 5s infinite alternate;
+    }
+
+    /* Style untuk Tombol Keluar ke Dashboard */
+    .btn-dashboard {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 31, 63, 0.8);
+      border: 1px solid var(--jarvis-cyan);
+      color: var(--jarvis-cyan);
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+
+    .btn-dashboard:hover {
+      background: rgba(255, 85, 85, 0.2);
+      border-color: #ff5555;
+      color: #ffaaaa;
+      box-shadow: 0 0 15px rgba(255, 85, 85, 0.5);
     }
 
     @keyframes container-glow {
@@ -390,12 +421,15 @@
   <div class="background-data"></div>
 
   <div class="container">
+    <a href="dasboard.html" class="btn-dashboard">
+      <i class="fas fa-sign-out-alt"></i> Keluar
+    </a>
+
     <div class="header">
       <h1 class="title">AbidinAI</h1>
       <p class="subtitle">Sistem Operasi Kecerdasan Buatan</p>
     </div>
     
-    <!-- INFORMASI FITUR SUARA -->
     <div class="voice-info">
       <i class="fas fa-info-circle"></i>
       Fitur suara tersedia di versi web. Pastikan mikrofon diizinkan.
@@ -449,7 +483,6 @@
     let currentAudio = null;
     let conversationHistory = [];
     
-    // Inisialisasi pengenalan suara
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     
     if (SpeechRecognition) {
@@ -470,10 +503,8 @@
         const voiceText = event.results[0][0].transcript;
         updateStatusMessage(`Anda: "${voiceText}"`);
         
-        // 🔥 Otomatis berhenti mendengarkan setelah ada hasil
         recognition.stop();
 
-        // Proses pesan
         await processVoiceMessage(voiceText);
       };
 
@@ -485,18 +516,14 @@
 
       recognition.onend = () => {
         isListening = false;
-        // Tidak lagi memanggil resetOrbState di onend
       };
     }
 
-    // FUNGSI BARU: Hapus HTML tags dari teks
     function stripHTML(html) {
       if (typeof html !== 'string') return html;
       
-      // Hapus semua tag HTML
       let cleanText = html.replace(/<[^>]*>/g, '');
       
-      // Decode HTML entities
       cleanText = cleanText
         .replace(/&amp;/g, '&')
         .replace(/&lt;/g, '<')
@@ -508,15 +535,12 @@
       return cleanText.trim();
     }
 
-    // FUNGSI BARU: Ekstrak teks murni (jika ada HTML)
     function extractTextOnly(input) {
       if (typeof input !== 'string') return input;
       
-      // Buat elemen sementara untuk ekstrak teks murni
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = input;
       
-      // Gunakan textContent untuk mendapatkan teks tanpa HTML
       return tempDiv.textContent || tempDiv.innerText || input;
     }
 
@@ -555,7 +579,6 @@
     }
 
     async function processVoiceMessage(message) {
-      // Hentikan pengenalan suara (jika belum) sebelum memproses
       if (isListening) {
         recognition.stop();
       }
@@ -564,11 +587,9 @@
       updateStatusMessage('Memproses...');
       addTypingAnimation();
 
-      // Simpan ke riwayat
       conversationHistory.push({ role: 'user', content: message });
 
       try {
-        // PERBAIKAN PENTING: Bersihkan HTML sebelum dikirim ke AI
         const cleanMessage = stripHTML(extractTextOnly(message));
 
         const response = await fetch("/api/chat", {
@@ -576,7 +597,6 @@
           headers: {
             "Content-Type": "application/json"
           },
-          // PERBAIKAN: Kirim TEKS BERSIH (tanpa HTML) ke AI
           body: JSON.stringify({ message: cleanMessage })
         });
 
@@ -587,13 +607,10 @@
         const data = await response.json();
         let aiReply = data.reply || "Maaf, saya tidak bisa menjawab itu saat ini.";
         
-        // PERBAIKAN: Bersihkan juga respons dari AI
         aiReply = stripHTML(aiReply);
         
-        // Simpan respons ke riwayat
         conversationHistory.push({ role: 'assistant', content: aiReply });
         
-        // Tampilkan dan bacakan respons
         await speakResponse(aiReply);
         
       } catch (error) {
@@ -609,7 +626,6 @@
       isSpeaking = true;
 
       if ('speechSynthesis' in window) {
-        // Bersihkan teks dari markdown dan karakter khusus
         const cleanText = stripHTML(text).replace(/[*`#\-+_~]/g, '').replace(/\n/g, ' ');
         
         const utterance = new SpeechSynthesisUtterance(cleanText);
@@ -619,7 +635,6 @@
         utterance.volume = 1.0;
 
         utterance.onstart = () => {
-          // Show sound waves when speaking starts
           const soundWaves = document.getElementById('soundWaves');
           if (soundWaves) {
             soundWaves.style.opacity = '1';
@@ -629,25 +644,21 @@
         utterance.onend = () => {
           isSpeaking = false;
           resetOrbState();
-          // 🔥 Setelah selesai berbicara, mulai mendengarkan lagi secara otomatis
           startListening();
         };
 
         utterance.onerror = () => {
           isSpeaking = false;
           resetOrbState();
-          // 🔥 Jika ada kesalahan, kembali mendengarkan
           startListening();
         };
 
         window.speechSynthesis.speak(utterance);
       } else {
-        // Tampilkan teks yang sudah dibersihkan dari HTML
         updateStatusMessage(stripHTML(text));
         setTimeout(() => {
           isSpeaking = false;
           resetOrbState();
-          // 🔥 Jika tidak ada synthesis, tetap kembali mendengarkan
           startListening();
         }, 3000);
       }
@@ -657,7 +668,6 @@
       const orb = document.getElementById('voiceOrb');
       const icon = document.getElementById('orbIcon');
       
-      // Reset classes
       orb.className = 'voice-orb';
       
       switch(state) {
@@ -690,14 +700,13 @@
     }
 
     function updateStatusMessage(message) {
-      // Bersihkan HTML sebelum menampilkan pesan status
       const cleanMessage = stripHTML(message);
       document.getElementById('statusMessage').textContent = cleanMessage;
     }
 
     function addWaveAnimation() {
       const statusDiv = document.querySelector('.status-text');
-      removeAnimations(); // Hapus animasi lama
+      removeAnimations();
       const waveDiv = document.createElement('div');
       waveDiv.className = 'wave-animation';
       waveDiv.innerHTML = `
@@ -712,7 +721,7 @@
 
     function addTypingAnimation() {
       const statusDiv = document.querySelector('.status-text');
-      removeAnimations(); // Hapus animasi lama
+      removeAnimations();
       const typingDiv = document.createElement('div');
       typingDiv.className = 'typing-dots';
       typingDiv.innerHTML = `
@@ -756,7 +765,6 @@
       }, 2000);
     }
 
-    // Inisialisasi
     document.addEventListener('DOMContentLoaded', function() {
       if (!SpeechRecognition) {
         updateStatusMessage('Perangkat tidak mendukung pengenalan suara');
@@ -768,7 +776,6 @@
       }
     });
 
-    // Prevent context menu on long press
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });

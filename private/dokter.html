@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/jpg" href="https://iili.io/FvxcSaa.jpg"/>
   <title>Dokter AbidinAI</title>
@@ -319,6 +322,27 @@
       transform: translateY(0);
     }
 
+    /* Styling khusus tombol keluar */
+    .menu-item-logout {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      background: #333333;
+      border-radius: 15px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .menu-item-logout:hover {
+      background: #222222;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
     /* Status */
     .status {
       margin-top: 20px;
@@ -403,7 +427,6 @@
 </head>
 <body>
   <div class="creator-container">
-    <!-- Header -->
     <div class="header">
       <div class="logo-circle">
         <img src="https://i.imgur.com/ODpJVSL.jpeg" alt="Dokter AI" />
@@ -417,15 +440,12 @@
 
     <div class="separator"></div>
 
-    <!-- Audio Control -->
     <div class="audio-control">
       <button class="audio-btn" onclick="toggleAudio()">
-        <i class="fas fa-play"></i>
-        Putar Musik
+        <i class="fas fa-pause"></i> Jeda Musik
       </button>
     </div>
 
-    <!-- Chat Area -->
     <div class="chat-area" id="chatArea">
       <div class="welcome-message">
         <span class="doctor-name">Dokter AI:</span>
@@ -441,7 +461,6 @@
       </div>
     </div>
 
-    <!-- Input Area -->
     <div class="input-area">
       <div class="input-box">
         <input 
@@ -461,14 +480,17 @@
       </button>
     </div>
 
-    <!-- Status -->
+    <a href="dasboard.html" class="menu-item-logout" style="color: #ffffff; font-weight: bold;">
+      <i class="fas fa-sign-out-alt" style="font-size: 20px; margin-right: 8px; color: #ff0000; transition: all 0.3s ease;"></i>
+      <span>Keluar</span>
+    </a>
+
     <div class="status">
       <i class="fas fa-plug"></i>
       <span>Terhubung ke Server AbidinAI</span>
     </div>
   </div>
 
-  <!-- Audio Player -->
   <audio id="audioPlayer" loop>
     <source src="https://d.top4top.io/m_33403we8x0.mp3" type="audio/mpeg">
   </audio>

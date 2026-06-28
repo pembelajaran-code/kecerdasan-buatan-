@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AbidinAI Voice Assistant</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ------------------------------------------------------------------ */
-    /* JARVIS / NEON UI STYLES */
-    /* ------------------------------------------------------------------ */
-    
-    /* Font Futuristick */
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
     
-    /* Color Palette */
     :root {
-      --neon-blue: #00fff2; /* Biru Neon Utama */
+      --neon-blue: #00fff2;
       --dark-bg: #0a0a1a;
-      --glass-bg: rgba(0, 255, 242, 0.05); /* Latar Belakang Kaca Transparan */
+      --glass-bg: rgba(0, 255, 242, 0.05);
       --border-glow: rgba(0, 255, 242, 0.5);
       --text-color: #e0f7fa;
     }
@@ -29,7 +26,7 @@
     }
     
     body {
-      font-family: 'Orbitron', sans-serif; /* Font Jarvis */
+      font-family: 'Orbitron', sans-serif;
       background: var(--dark-bg);
       min-height: 100vh;
       display: flex;
@@ -42,7 +39,6 @@
       position: relative;
     }
 
-    /* Efek Grid Futuristik di Latar Belakang */
     body::before {
       content: '';
       position: absolute;
@@ -66,13 +62,12 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      z-index: 10; /* Pastikan di atas latar belakang */
+      z-index: 10;
     }
     
     .header {
       text-align: center;
       margin-bottom: 50px;
-      /* Tambahkan Glow pada Header */
       text-shadow: 0 0 5px var(--neon-blue);
     }
     
@@ -91,7 +86,6 @@
       letter-spacing: 1px;
     }
     
-    /* Informasi fitur suara */
     .voice-info {
       background: rgba(0, 255, 242, 0.1);
       border: 1px solid rgba(0, 255, 242, 0.3);
@@ -112,12 +106,10 @@
       margin-right: 8px;
     }
     
-    /* Voice Orb - Inti Tampilan Jarvis */
     .voice-orb {
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      /* Latar belakang orb sekarang transparan */
       background: var(--glass-bg);
       display: flex;
       align-items: center;
@@ -126,7 +118,6 @@
       margin: 20px 0 30px;
       cursor: pointer;
       transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-      /* Efek Kaca */
       backdrop-filter: blur(15px); 
       border: 1px solid var(--border-glow);
       box-shadow: 0 0 20px var(--border-glow);
@@ -137,17 +128,15 @@
       box-shadow: 0 0 30px var(--neon-blue);
     }
     
-    /* Animasi Mendengarkan (Blue Pulse) */
     .voice-orb.listening {
       animation: neon-pulse 2s infinite;
       box-shadow: 0 0 30px var(--neon-blue);
       border-color: var(--neon-blue);
     }
     
-    /* Animasi Berbicara (Green/Secondary Pulse) */
     .voice-orb.speaking {
       animation: neon-ripple 1.5s infinite;
-      box-shadow: 0 0 30px #7aff00; /* Neon Green */
+      box-shadow: 0 0 30px #7aff00;
       border-color: #7aff00;
     }
     
@@ -166,7 +155,7 @@
     .orb-icon {
       font-size: 55px;
       color: white;
-      z-index: 5; /* Pastikan di atas animasi */
+      z-index: 5;
       text-shadow: 0 0 10px var(--neon-blue);
       background: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
@@ -242,12 +231,10 @@
       box-shadow: 0 0 5px var(--neon-blue);
     }
     
-    /* Hidden chat (no visual change needed) */
     .hidden-chat {
       display: none;
     }
     
-    /* Wave Animation for Listening */
     .wave-animation {
       display: flex;
       align-items: center;
@@ -270,7 +257,6 @@
     .wave-bar:nth-child(4) { animation-delay: 0.3s; }
     .wave-bar:nth-child(5) { animation-delay: 0.4s; }
     
-    /* Typing Dots */
     .typing-dots {
       display: inline-flex;
       gap: 5px;
@@ -291,13 +277,12 @@
     .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
     .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
     
-    /* Sound Wave Animation (Inside Orb when Speaking) */
     .sound-waves {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: none; /* Default hidden */
+      display: none;
       align-items: center;
       justify-content: center;
       gap: 3px;
@@ -314,8 +299,22 @@
       opacity: 0.9;
       box-shadow: 0 0 5px var(--neon-blue);
     }
+
+    /* Gaya khusus tambahan untuk tombol keluar berwarna merah/neon */
+    .btn-exit {
+      color: #ff5555;
+      border-color: rgba(255, 85, 85, 0.5);
+      box-shadow: 0 0 10px rgba(255, 85, 85, 0.3);
+    }
+    .btn-exit:hover {
+      background: rgba(255, 85, 85, 0.1);
+      box-shadow: 0 0 20px #ff5555;
+      color: white;
+    }
+    .btn-exit:active {
+      box-shadow: 0 0 5px #ff5555;
+    }
     
-    /* Keyframe Overrides for Jarvis Look */
     @keyframes neon-pulse {
       0% { box-shadow: 0 0 0 0 rgba(0, 255, 242, 0.7); }
       70% { box-shadow: 0 0 0 25px rgba(0, 255, 242, 0); }
@@ -343,7 +342,6 @@
       100% { transform: scaleY(1); opacity: 0.9; }
     }
     
-    /* Media Queries */
     @media (max-width: 480px) {
       .voice-orb {
         width: 180px;
@@ -373,9 +371,6 @@
         padding: 8px 12px;
       }
     }
-    /* ------------------------------------------------------------------ */
-    /* END JARVIS / NEON UI STYLES */
-    /* ------------------------------------------------------------------ */
   </style>
 </head>
 <body>
@@ -385,7 +380,6 @@
       <p class="subtitle">Asisten Cerdas Dengan Suara</p>
     </div>
     
-    <!-- Informasi Fitur Suara -->
     <div class="voice-info">
       <i class="fas fa-info-circle"></i>
       Fitur suara tersedia di versi web. Pastikan mikrofon Anda diizinkan.
@@ -421,6 +415,9 @@
       <button class="control-btn" onclick="toggleSettings()">
         <i class="fas fa-cog"></i>
       </button>
+      <button class="control-btn btn-exit" onclick="location.href='dasboard.html'" title="Keluar ke Dasboard">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
     </div>
   </div>
 
@@ -437,7 +434,6 @@
     let currentAudio = null;
     let conversationHistory = [];
     
-    // Inisialisasi pengenalan suara
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     
     if (SpeechRecognition) {
@@ -458,7 +454,6 @@
         const voiceText = event.results[0][0].transcript;
         updateStatusMessage(`Anda: "${voiceText}"`);
         
-        // Proses pesan
         await processVoiceMessage(voiceText);
       };
 
@@ -475,7 +470,6 @@
         }
       };
     } else {
-      // Jika browser tidak mendukung Web Speech API
       document.querySelector('.voice-info').innerHTML = 
         '<i class="fas fa-exclamation-triangle"></i> ' +
         'Fitur suara hanya tersedia di versi web Chrome/Edge. Browser Anda tidak mendukung.';
@@ -483,26 +477,20 @@
       document.querySelector('.voice-info').style.color = '#ffaaaa';
     }
 
-    // FUNGSI BARU: Ekstrak teks murni dari HTML
     function extractTextOnly(input) {
       if (typeof input !== 'string') return input;
       
-      // Buat elemen sementara untuk ekstrak teks
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = input;
       
-      // Gunakan innerText (lebih baik karena menghiraukan hidden elements)
       return tempDiv.innerText || tempDiv.textContent || input;
     }
 
-    // FUNGSI BARU: Hapus semua tag HTML dari string
     function stripHTML(html) {
       if (typeof html !== 'string') return html;
       
-      // Hapus semua tag HTML
       let cleanText = html.replace(/<[^>]*>/g, '');
       
-      // Decode HTML entities
       cleanText = cleanText
         .replace(/&amp;/g, '&')
         .replace(/&lt;/g, '<')
@@ -515,7 +503,6 @@
     }
 
     function toggleVoiceChat() {
-      // Periksa apakah browser mendukung
       if (!SpeechRecognition) {
         updateStatusMessage('Browser tidak mendukung fitur suara. Gunakan Chrome/Edge versi web.');
         return;
@@ -561,11 +548,9 @@
       updateStatusMessage('Memproses...');
       addTypingAnimation();
 
-      // Simpan ke riwayat
       conversationHistory.push({ role: 'user', content: message });
 
       try {
-        // PERBAIKAN PENTING: Bersihkan pesan dari HTML sebelum dikirim ke AI
         const cleanMessage = extractTextOnly(message);
 
         const response = await fetch("/api/chat", {
@@ -573,7 +558,6 @@
           headers: {
             "Content-Type": "application/json"
           },
-          // PERBAIKAN: Kirim TEKS BERSIH (tanpa HTML) ke AI
           body: JSON.stringify({ message: cleanMessage })
         });
 
@@ -584,13 +568,10 @@
         const data = await response.json();
         let aiReply = data.reply || "Maaf, saya tidak bisa menjawab itu saat ini.";
         
-        // PERBAIKAN: Bersihkan juga respons dari AI (jika ada HTML)
         aiReply = stripHTML(aiReply);
         
-        // Simpan respons ke riwayat
         conversationHistory.push({ role: 'assistant', content: aiReply });
         
-        // Tampilkan dan bacakan respons
         await speakResponse(aiReply);
         
       } catch (error) {
@@ -606,7 +587,6 @@
       isSpeaking = true;
 
       if ('speechSynthesis' in window) {
-        // Bersihkan teks dari markdown dan karakter khusus
         const cleanText = text.replace(/[*`#\-+_~]/g, '').replace(/\n/g, ' ');
         
         const utterance = new SpeechSynthesisUtterance(cleanText);
@@ -616,7 +596,6 @@
         utterance.volume = 1.0;
 
         utterance.onstart = () => {
-          // Tampilkan sound waves
           const soundWaves = document.getElementById('soundWaves');
           if (soundWaves) {
             soundWaves.style.display = 'flex';
@@ -635,7 +614,6 @@
 
         window.speechSynthesis.speak(utterance);
       } else {
-        // Fallback untuk browser tanpa SpeechSynthesis
         updateStatusMessage(text);
         setTimeout(() => {
           isSpeaking = false;
@@ -648,7 +626,6 @@
       const orb = document.getElementById('voiceOrb');
       const icon = document.getElementById('orbIcon');
       
-      // Reset classes
       orb.className = 'voice-orb';
       
       switch(state) {
@@ -674,7 +651,6 @@
       updateStatusMessage(lastMessage.replace(/[*`#\-+_~]/g, '').substring(0, 100) + (lastMessage.length > 100 ? '...' : ''));
       removeAnimations();
       
-      // Sembunyikan sound waves
       const soundWaves = document.getElementById('soundWaves');
       if (soundWaves) {
         soundWaves.style.display = 'none';
@@ -690,7 +666,6 @@
       const statusDiv = document.querySelector('.status-text');
       const statusMessage = document.getElementById('statusMessage');
       
-      // Hapus pesan lama sebelum menambahkan animasi
       statusMessage.textContent = 'Mendengarkan...'; 
       removeAnimations(); 
 
@@ -710,7 +685,6 @@
       const statusDiv = document.querySelector('.status-text');
       const statusMessage = document.getElementById('statusMessage');
 
-      // Hapus pesan lama sebelum menambahkan animasi
       statusMessage.textContent = 'Memproses...'; 
       removeAnimations(); 
 
@@ -762,15 +736,13 @@
       }, 2000);
     }
 
-    // Inisialisasi
     document.addEventListener('DOMContentLoaded', function() {
       if (!SpeechRecognition) {
         updateStatusMessage('Browser tidak mendukung pengenalan suara');
       }
-      resetOrbState(); // Pastikan tampilan awal bersih
+      resetOrbState();
     });
 
-    // Prevent context menu on long press
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });

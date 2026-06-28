@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AbidinAI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #020617;
+      background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #020617 70%);
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+      padding-bottom: 90px; 
+    }
+
+    .quantum-container {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      width: 100%;
+      max-width: 550px;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-bottom: 4px solid #6366f1;
+    }
+
+    /* Style untuk Tombol Keluar Dashboard */
+    .btn-dashboard {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      margin-bottom: 16px;
+    }
+
+    .btn-dashboard:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      color: #f87171;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+    }
+
+    .studio-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .studio-header i {
+      font-size: 52px;
+      background: linear-gradient(135deg, #06b6d4, #6366f1, #d946ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    .studio-header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+    }
+
+    .studio-header p {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .terminal-box {
+      background: #030712;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 16px;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      text-align: left;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terminal-box .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+
+    .input-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    textarea, input {
+      width: 100%;
+      background: rgba(3, 7, 18, 0.8);
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 14px;
+      color: #f1f5f9;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    textarea:focus, input:focus {
+      border-color: #06b6d4;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+
+    .optional-url-box {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .btn-quantum {
+      background: linear-gradient(135deg, #06b6d4, #6366f1);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-quantum:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+    }
+
+    .btn-quantum:disabled {
+      background: #1e293b !important;
+      color: #64748b;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .monitor-frame {
+      margin-top: 24px;
+      min-height: 360px;
+      border: 2px dashed #475569;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #030712;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .monitor-frame.transparent-bg {
+      background-image: linear-gradient(45deg, #1f2937 25%, transparent 25%), 
+                        linear-gradient(-45deg, #1f2937 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #1f2937 75%), 
+                        linear-gradient(-45deg, transparent 75%, #1f2937 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    }
+
+    .monitor-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 16px;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .btn-save {
+      display: none;
+      background: #10b981;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 16px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .loader-wrapper {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .quantum-loader {
+      width: 52px;
+      height: 52px;
+      border: 4px solid rgba(6, 182, 212, 0.1);
+      border-radius: 50%;
+      border-top-color: #06b6d4;
+      border-bottom-color: #d946ef;
+      animation: spin 0.8s linear infinite;
+    }
+
+    #banner-ad-container {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+    @keyframes pulseGlow { from { filter: drop-shadow(0 0 8px rgba(99,102,241,0.4)); } to { filter: drop-shadow(0 0 20px rgba(6,182,212,0.7)); } }
+  </style>
+</head>
+<body>
+
+  <div class="quantum-container">
+    <a href="dasboard.html" class="btn-dashboard">
+      <i class="fas fa-arrow-left"></i> Keluar
+    </a>
+
+    <div class="studio-header">
+      <i class="fas fa-brain"></i>
+      <h1>ABIDINAI</h1>
+      <p>Gambar Cerdas AbidinAI.</p>
+    </div>
+
+    <div class="terminal-box">
+      <div class="pulse-dot"></div>
+      <span id="terminalStatus">AbidinAI Online. Saya siap membantu.</span>
+    </div>
+
+    <div class="input-pane">
+      
+      <div class="input-wrapper">
+        <label><i class="fas fa-comment-alt"></i> Masukkan Instruksi:</label>
+        <textarea id="corePrompt" rows="3" placeholder="Contoh: Gambar gunung megah dengan matahari terbit alami&#10;Contoh: Gambar kota futuristik cyberpunk dari atas" oninput="deteksiOtomatisPerintah(this.value)"></textarea>
+      </div>
+
+      <div class="input-wrapper optional-url-box" id="urlContainer">
+        <label style="color:#10b981;"><i class="fas fa-link"></i> Masukkan Link/URL Gambar yang Ingin Dihapus BG-nya:</label>
+        <input type="text" id="targetUrlImage" placeholder="Tempel URL gambar dari internet di sini...">
+      </div>
+
+      <button class="btn-quantum" id="generateBtn" onclick="routerTombolAbidin()">
+        <i class="fas fa-bolt"></i> Mulai Buat Gambar
+      </button>
+
+    </div>
+
+    <div class="monitor-frame" id="monitorFrame">
+      <div id="initPlaceholder" style="color:#475569; text-align:center; padding: 20px;">
+        <i class="fas fa-satellite-dish" style="font-size:36px; margin-bottom:8px; color:#334155;"></i>
+        <p style="font-size:13px;">Menunggu perintah dari AbidinAI.</p>
+      </div>
+
+      <div class="loader-wrapper" id="quantumLoader">
+        <div class="quantum-loader"></div>
+        <span id="loaderText" style="color: #06b6d4; font-weight:600; font-size:13px; font-family: monospace;">PROCESSING...</span>
+      </div>
+
+      <img id="studioOutput" alt="AbidinAI Result Output">
+    </div>
+
+    <button id="saveBtn" class="btn-save" onclick="downloadFileSecaraPrivate()">
+      <i class="fas fa-download"></i> Simpan
+    </button>
+  </div>
+
+  <div id="banner-ad-container"></div>
+
+  <script>
+    let modeOtomatis = "generate"; 
+    let linkAsliRahasia = "";
+
+
+    function routerTombolAbidin() {
+      prosesAutonomousStudio();
+    }
+
+    function deteksiOtomatisPerintah(teks) {
+      const kataKunciHapus = ["hapus background", "hapus bg", "potong", "transparan", "remove background", "hilangkan latar"];
+      const urlBox = document.getElementById("urlContainer");
+      const statusText = document.getElementById("terminalStatus");
+      const btn = document.getElementById("generateBtn");
+
+
+      if (btn.disabled && btn.textContent.includes("tunggu")) return;
+
+      const cocokHapusBg = kataKunciHapus.some(kata => teks.toLowerCase().includes(kata));
+
+      if (cocokHapusBg) {
+        modeOtomatis = "hapus_bg";
+        urlBox.style.display = "block";
+        statusText.textContent = "SYSTEM: Mendeteksi Intent [HAPUS BACKGROUND].";
+        statusText.style.color = "#10b981";
+        btn.style.background = "linear-gradient(135deg, #10b981, #059669)";
+      } else {
+        modeOtomatis = "generate";
+        urlBox.style.display = "none";
+        statusText.textContent = "SYSTEM: Mendeteksi Intent [ABIDINAI GENERATION].";
+        statusText.style.color = "#38bdf8";
+        btn.style.background = "linear-gradient(135deg, #06b6d4, #6366f1)";
+      }
+    }
+
+    function quantumPromptEnhancer(text) {
+      let lowerText = text.toLowerCase();
+      let cleanText = text.replace(/gambar /gi, "")
+                          .replace(/buatkan gambar /gi, "")
+                          .replace(/tolong buatkan /gi, "");
+      let styleAddon = "";
+
+      if (lowerText.includes("cyberpunk") || lowerText.includes("neon") || lowerText.includes("kota masa depan")) {
+        styleAddon = ", futuristic cyberpunk aesthetics, extreme neon cyber lighting, glowing micro-details, hyper-detailed rendering, cinematic dark atmosphere, volumetric fog, 8k resolution";
+      } 
+      else if (lowerText.includes("gunung") || lowerText.includes("pantai") || lowerText.includes("alam") || lowerText.includes("pemandangan") || lowerText.includes("sawah") || lowerText.includes("matahari")) {
+        styleAddon = ", majestic landscape photography, ultra realistic nature, national geographic style, highly detailed scenery, epic morning sunrise lighting, 8k resolution, cinematic atmosphere, crisp focus";
+      }
+      else {
+        styleAddon = ", highly detailed rendering, photorealistic elements, beautiful composition, 8k resolution, professional digital art style";
+      }
+      return cleanText + styleAddon + " --no low quality, deformed anatomy, blurry artifacts, distorted shapes";
+    }
+
+    async function prosesAutonomousStudio() {
+      const corePrompt = document.getElementById("corePrompt").value.trim();
+      const targetUrlImage = document.getElementById("targetUrlImage").value.trim();
+      
+      const btn = document.getElementById("generateBtn");
+      const placeholder = document.getElementById("initPlaceholder");
+      const loader = document.getElementById("quantumLoader");
+      const loaderText = document.getElementById("loaderText");
+      const img = document.getElementById("studioOutput");
+      const saveBtn = document.getElementById("saveBtn");
+      const statusText = document.getElementById("terminalStatus");
+      const frame = document.getElementById("monitorFrame");
+
+      if (!corePrompt) return alert("Ketik perintah atau prompt terlebih dahulu!");
+
+      btn.disabled = true;
+      placeholder.style.display = "none";
+      img.style.display = "none";
+      saveBtn.style.display = "none";
+      loader.style.display = "flex";
+
+      if (modeOtomatis === "generate") {
+        statusText.textContent = "Menjalankan Buat Gambar...";
+        loaderText.textContent = "ABIDINAI MENGHASILKAN GAMBAR...";
+
+        const expandedText = quantumPromptEnhancer(corePrompt);
+        let w = 720, h = 1280;
+        const seed = Math.floor(Math.random() * 9999999);
+        
+        linkAsliRahasia = `https://image.pollinations.ai/p/${encodeURIComponent(expandedText)}?width=${w}&height=${h}&model=flux&seed=${seed}`;
+        frame.classList.remove("transparent-bg");
+      } else {
+        if (!targetUrlImage) {
+          btn.disabled = false;
+          loader.style.display = "none";
+          placeholder.style.display = "block";
+          return alert("Masukkan URL gambar!");
+        }
+        statusText.textContent = "SYSTEM: Memproses pemotongan latar belakang...";
+        loaderText.textContent = "MEMOTONG BACKGROUND...";
+        
+        linkAsliRahasia = `https://res.cloudinary.com/demo/image/fetch/e_background_removal/f_png/${targetUrlImage}`;
+        frame.classList.add("transparent-bg");
+      }
+
+      try {
+        const response = await fetch(linkAsliRahasia);
+        const blob = await response.blob();
+        const objectURL = URL.createObjectURL(blob);
+        
+        img.src = objectURL;
+        img.style.display = "block";
+        loader.style.display = "none";
+        saveBtn.style.display = "flex";
+        
+        mulaiJedaCooldown();
+      } catch (error) {
+        img.src = linkAsliRahasia;
+        img.style.display = "block";
+        loader.style.display = "none";
+        saveBtn.style.display = "flex";
+        
+        mulaiJedaCooldown();
+      }
+    }
+
+
+    function mulaiJedaCooldown() {
+      const statusText = document.getElementById("terminalStatus");
+      const btn = document.getElementById("generateBtn");
+      let waktuTunggu = 5;
+
+      statusText.textContent = "Gambar sukses dibuat...";
+      statusText.style.color = "#38bdf8";
+
+      
+      btn.disabled = true;
+      
+      const intervalCooldown = setInterval(() => {
+        btn.innerHTML = `<i class="fas fa-hourglass-half"></i> Tunggu ${waktuTunggu}s...`;
+        waktuTunggu--;
+
+        if (waktuTunggu < 0) {
+          clearInterval(intervalCooldown);
+          btn.disabled = false;
+          
+          
+          if (modeOtomatis === "hapus_bg") {
+            btn.innerHTML = '<i class="fas fa-bolt"></i> Mulai Buat Gambar';
+            btn.style.background = "linear-gradient(135deg, #10b981, #059669)";
+          } else {
+            btn.innerHTML = '<i class="fas fa-bolt"></i> Mulai Buat Gambar';
+            btn.style.background = "linear-gradient(135deg, #06b6d4, #6366f1)";
+          }
+          statusText.textContent = "ABIDINAI. Siap menerima perintah selanjutnya.";
+        }
+      }, 1000);
+    }
+
+    async function downloadFileSecaraPrivate() {
+      if (!linkAsliRahasia) return;
+      const statusText = document.getElementById("terminalStatus");
+      statusText.textContent = "SYSTEM: Mengunduh file langsung ke memori lokal...";
+
+      try {
+        const response = await fetch(linkAsliRahasia);
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        
+        const fileAman = document.createElement('a');
+        fileAman.style.display = 'none';
+        fileAman.href = blobUrl;
+        fileAman.download = `AbidinAI_${Math.floor(Date.now() / 1000)}.png`;
+        
+        document.body.appendChild(fileAman);
+        fileAman.click();
+        
+        window.URL.revokeObjectURL(blobUrl);
+        document.body.removeChild(fileAman);
+        statusText.textContent = "SYSTEM: File berhasil disimpan di folder Download.";
+      } catch (e) {
+        window.open(linkAsliRahasia, '_blank');
+      }
+    }
+  </script>
+</body>
+</html>

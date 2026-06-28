@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+j <!DOCTYPE html>
 <html lang="id">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terjemahan AbidinAI - Elegan</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    
     :root {
       --primary-color: #4a90e2; 
       --secondary-color: #38c172; 
@@ -19,7 +20,6 @@
       --text-muted: #a0a0a0;
       --border-color: #333;
     }
-    
     
     * {
       margin: 0;
@@ -39,7 +39,6 @@
       overflow-x: hidden;
     }
 
-    
     .top-bar-mock {
         width: 100%;
         max-width: 500px;
@@ -67,7 +66,6 @@
         color: var(--text-light);
     }
 
-    /* Container Utama */
     .container {
       width: 100%;
       max-width: 500px;
@@ -76,7 +74,6 @@
       margin-top: 55px; 
     }
 
-    /* Header Konten */
     .header {
       margin-bottom: 25px;
       padding-top: 15px;
@@ -95,7 +92,6 @@
       color: var(--text-muted);
     }
     
-    /* Translator Block */
     .translator-block {
         background: var(--card-bg);
         border-radius: 12px;
@@ -123,7 +119,6 @@
         color: var(--secondary-color);
     }
     
-    /* Input Teks */
     #messageInput {
       width: 100%;
       height: 120px; 
@@ -138,11 +133,9 @@
     
     #messageInput:focus {
       outline: none;
-      /* Border bawah berubah saat fokus */
       border-bottom: 2px solid var(--primary-color);
     }
     
-    /* Dropdown Bahasa Tujuan */
     .language-select-group {
         padding: 0 20px;
         margin-bottom: 20px;
@@ -177,7 +170,6 @@
         background-color: #121212;
     }
 
-    /* Action Buttons */
     .action-buttons {
         display: flex;
         gap: 15px;
@@ -234,7 +226,6 @@
       transform: none;
     }
 
-    /* Area Hasil Terjemahan */
     .translation-result-area {
         min-height: 100px;
         padding: 20px;
@@ -270,7 +261,27 @@
         font-style: normal;
     }
 
-    /* Animation */
+    .menu-item-logout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .menu-item-logout:hover {
+      background-color: rgba(255, 0, 0, 0.05);
+      border-color: #ff0000;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
@@ -286,7 +297,6 @@
       vertical-align: middle;
     }
     
-    /* Media Queries */
     @media (max-width: 600px) {
         .container { margin-top: 55px; padding: 10px 10px 20px; }
         .action-buttons { flex-direction: column; gap: 10px; padding: 0 10px 10px; }
@@ -322,6 +332,7 @@
     <option value="id">Bahasa Indonesia</option>
     <option value="jv">Bahasa Jawa</option>
     <option value="su">Bahasa Sunda</option>
+    <option value="mad">Bahasa Madura</option>
     <option value="min">Bahasa Minangkabau</option>
     <option value="bug">Bahasa Bugis</option>
     <option value="ban">Bahasa Bali</option>
@@ -371,6 +382,11 @@
     <div class="translation-result-area" id="translationResultArea">
       <span class="initial-message">Hasil terjemahan akan muncul di sini.</span>
     </div>
+
+    <a href="dasboard.html" class="menu-item-logout" style="color: #ffffff; font-weight: bold;">
+      <i class="fas fa-sign-out-alt" style="font-size: 20px; margin-right: 8px; color: #ff0000; transition: all 0.3s ease;"></i>
+      <span>Keluar</span>
+    </a>
     
   </div>
 
@@ -397,7 +413,6 @@
       const resultArea = document.getElementById("translationResultArea");
       const sendButton = document.getElementById("sendButton");
 
-      // Tampilkan indikator loading
       resultArea.innerHTML = `
         <div class="loading-indicator">
           <span class="loading"></span>
@@ -406,21 +421,17 @@
       `;
       sendButton.disabled = true;
 
-      // Logika Prompt Groq AI untuk Terjemahan
-      // System Prompt digabung ke dalam pesan untuk meniru pola dokter.html
       const systemPrompt = `Anda adalah ahli terjemahan profesional. Tugas Anda adalah menerjemahkan teks pengguna ke dalam bahasa ${targetLang} (${targetLangCode}). Berikan HANYA teks hasil terjemahan tanpa penjelasan, salam, atau teks tambahan apa pun. Teks harus akurat dan alami.`;
       const finalMessage = `${systemPrompt} Teks untuk diterjemahkan: ${sourceText}`;
 
-
       try {
-        // ASUMSI: Endpoint /api/chat di server.js Anda menangani Groq AI
         const response = await fetch("/api/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify({ 
-            message: finalMessage // Mengirim gabungan System Prompt dan Teks Sumber
+            message: finalMessage 
           })
         });
 
@@ -431,7 +442,6 @@
         const data = await response.json();
         let translatedText = data.reply || "Gagal mendapatkan hasil terjemahan. Coba lagi.";
         
-        // Tampilkan hasil terjemahan
         resultArea.innerHTML = `<span class="translation-result">${translatedText}</span>`;
 
       } catch (error) {
@@ -443,14 +453,13 @@
       }
     }
 
-    // --- LOGIKA VOICE RECOGNITION ---
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     let recognition;
     let isRecording = false;
 
     if (SpeechRecognition) {
       recognition = new SpeechRecognition();
-      recognition.lang = 'id-ID'; // Bahasa sumber default adalah Indonesia
+      recognition.lang = 'id-ID'; 
       recognition.continuous = false;
       recognition.interimResults = false;
       recognition.maxAlternatives = 1;
@@ -459,7 +468,7 @@
         isRecording = true;
         const recordButton = document.getElementById("recordButton");
         recordButton.innerHTML = '<i class="fas fa-stop"></i> Berhenti Merekam';
-        recordButton.style.backgroundColor = '#dc3545'; // Merah saat merekam
+        recordButton.style.backgroundColor = '#dc3545'; 
         recordButton.style.boxShadow = '0 4px 0 #a71d2a';
         recordButton.style.transform = 'translateY(0)';
         document.getElementById("translationResultArea").innerHTML = "Sedang mendengarkan... Bicara sekarang.";
@@ -470,7 +479,6 @@
         document.getElementById("messageInput").value = voiceText;
         isVoiceInput = true;
         stopRecordingUI();
-        // Langsung terjemahkan setelah suara selesai direkam
         sendMessage(); 
       };
 
@@ -480,7 +488,7 @@
       };
       
       recognition.onend = () => {
-        if(isRecording) { // Jika recognition berakhir tanpa hasil (timeout/error)
+        if(isRecording) { 
              stopRecordingUI();
         }
       };

@@ -1,241 +1,214 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ABIDINAI - Artificial Intelligence Indonesia</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="google-adsense-account" content="ca-pub-9278385714067409">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Install AbidinAI</title>
 <style>
+  :root{
+    --bg:#0f1724;
+    --card:#0b1220;
+    --accent:#6ee7b7;
+    --muted:#94a3b8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, sans-serif;
+    background: radial-gradient(1000px 600px at 10% 20%, rgba(110,231,183,0.06), transparent 10%),
+                radial-gradient(800px 500px at 90% 80%, rgba(99,102,241,0.04), transparent 10%),
+                var(--bg);
+    color:#e6eef8;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .card{
+    width:100%;
+    max-width:520px;
+    background: rgba(255,255,255,0.03);
+    border-radius:16px;
+    padding:28px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+    backdrop-filter: blur(6px);
+    position: relative;
+  }
+  
+  /* Gaya Tombol Keluar / Kembali */
+  .btn-exit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+  }
+  .btn-exit:hover {
+    color: #f43f5e;
+    background: rgba(244, 63, 94, 0.1);
+    border-color: rgba(244, 63, 94, 0.2);
+  }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Poppins",sans-serif;
-}
+  .brand{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-bottom:10px;
+  }
+  .logo{
+    width:64px;
+    height:64px;
+    border-radius:12px;
+    background: linear-gradient(135deg, #06b6d4, #7c3aed);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:22px;
+    color:white;
+  }
+  h1{
+    margin:0;
+    font-size:20px;
+  }
+  p.lead{
+    margin:10px 0 20px;
+    color:var(--muted);
+    font-size:14px;
+  }
+  .btn{
+    appearance:none;
+    border:0;
+    cursor:pointer;
+    padding:14px 20px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:15px;
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    transition:transform .12s ease;
+    background: linear-gradient(90deg, #10b981, #06b6d4);
+    color: #042028;
+    width:100%;
+    margin-bottom:15px;
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+  .btn:active{ transform: scale(.97) }
 
-body{
-background:#0b0f19;
-color:white;
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:30px;
-}
+  @keyframes pulse {
+    0% { box-shadow: 0 6px 24px rgba(6,182,129,0.12) }
+    50% { box-shadow: 0 10px 30px rgba(6,182,129,0.16) }
+    100% { box-shadow: 0 6px 24px rgba(6,182,129,0.12) }
+  }
 
-.container{
-max-width:1000px;
-width:100%;
-}
+  .safe-box{
+    background: rgba(255,255,255,0.02);
+    padding:16px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.05);
+    margin-top:14px;
+  }
 
-.card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(25px);
-padding:40px;
-border-radius:20px;
-box-shadow:0 0 50px rgba(0,0,0,0.5);
-}
+  .safe-box b{
+    color:#6ee7b7;
+  }
 
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:25px;
-}
+  .safe-title{
+    margin:0 0 8px;
+    font-weight:600;
+    font-size:15px;
+    color:#6ee7b7;
+  }
 
-.logo{
-font-size:32px;
-font-weight:600;
-}
+  .status{
+    font-size:13px;
+    margin-top:12px;
+    color:var(--muted);
+  }
 
-.logo span{
-color:#00eaff;
-}
-
-.status{
-color:#00ffa6;
-font-size:14px;
-}
-
-.desc{
-opacity:0.8;
-line-height:1.6;
-margin-bottom:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-bottom:35px;
-}
-
-.feature{
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.05);
-padding:18px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.feature:hover{
-background:rgba(255,255,255,0.06);
-transform:translateY(-4px);
-}
-
-.feature h3{
-font-size:16px;
-margin-bottom:5px;
-}
-
-.security-box{
-background:rgba(0,255,170,0.06);
-border:1px solid rgba(0,255,170,0.3);
-padding:15px;
-border-radius:10px;
-margin-bottom:25px;
-font-size:14px;
-}
-
-.install-section{
-text-align:center;
-}
-
-.install-btn{
-background:linear-gradient(45deg,#00eaff,#00ffa6);
-border:none;
-padding:16px 45px;
-font-size:18px;
-border-radius:50px;
-cursor:pointer;
-font-weight:600;
-color:black;
-transition:0.3s;
-}
-
-.install-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(0,255,200,0.6);
-}
-
-.progress{
-width:100%;
-height:10px;
-background:rgba(255,255,255,0.08);
-border-radius:10px;
-margin-top:25px;
-overflow:hidden;
-display:none;
-}
-
-.bar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#00eaff,#00ffa6);
-}
-
-.info{
-margin-top:20px;
-font-size:13px;
-opacity:0.7;
-}
-
-footer{
-margin-top:30px;
-text-align:center;
-font-size:13px;
-opacity:0.5;
-}
+  /* Penyelarasan Wadah Iklan */
+  #banner-ad-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+  }
 
 </style>
 </head>
-
 <body>
+  <div class="card">
+    
+    <a href="dasboard.html" class="btn-exit">
+      ⬅️ Keluar
+    </a>
 
-<div class="container">
-
-<div class="card">
-
-<div class="header">
-
-<div class="logo">
-ABIDIN<span>AI</span>
+    <div class="brand">
+      <div class="logo">
+    <img src="https://i.ibb.co.com/C5shxwWT/20251120-193509.jpg" alt="Logo" style="width: 70px; height: auto;">
 </div>
+      <div>
+        <h1>Install AbidinAI</h1>
+        <div style="font-size:12px;color:#94a3b8;"></div>
+      </div>
+    </div>
 
-<div class="status">
-● Sistem Aman
-</div>
-</div>
+    <p class="lead">
+      Tekan tombol di bawah untuk memulai instalasi aplikasi AbidinAI.  
+      Kamu akan diarahkan ke halaman pemasangan berikutnya.
+    </p>
 
-<p class="desc">
-ABIDINAI adalah sistem kecerdasan buatan yang dikembangkan di Indonesia oleh Abidin.
-Dirancang untuk membantu berbagai kebutuhan digital dengan teknologi AI modern,
-analisis cepat, serta menjaga keamana untuk penggunaan.
-</p>
+    <button id="installBtn" class="btn">
+      Install Aplikasi AbidinAI
+    </button>
 
-<div class="grid">
-<div class="security-box">
-🔒 Verifikasi keamanan aktif <br>
-File telah melalui pemeriksaan integritas sistem sebelum instalasi.
-</div>
-<div class="install-section">
+    <div id="statusText" class="status"></div>
 
-<button class="install-btn" onclick="installApp()">
-Install ABIDINAI
-</button>
+    <div id="banner-ad-container"></div>
 
-<div class="progress" id="progress">
-<div class="bar" id="bar"></div>
-</div>
-
-<div class="info">
-Versi terbaru • Secure Installer • Android APK
-</div>
-
-</div>
-
-<footer>
-© 2026 ABIDINAI<p></p>Artificial Intelligence
-</footer>
-
-</div>
-
-</div>
+    <div class="safe-box">
+      <p class="safe-title">🛡 Informasi Keamanan AbidinAI</p>
+      <p style="font-size:13px; line-height:1.5;">
+        Jangan khawatir! <b>AbidinAI 100% aman</b> untuk di-install.  
+        Setiap versi aplikasi telah melalui pemeriksaan manual, tidak mengandung virus,
+        tidak mengambil data pribadi tanpa izin, dan sepenuhnya <b>dibangun oleh developer muda </b>.
+        <br><br>
+        Keamanan adalah prioritas utama kami — teknologi boleh canggih, tapi privasi tetap nomor satu.
+      </p>
+    </div>
+  </div>
 
 <script>
+  const NEXT_URL = "https://example.com/next-step"; // ganti linkmu di sini
+  const installBtn = document.getElementById('installBtn');
+  const status = document.getElementById('statusText');
 
-function installApp(){
-
-let progress=document.getElementById("progress")
-let bar=document.getElementById("bar")
-
-progress.style.display="block"
-
-let width=0
-
-let interval=setInterval(function(){
-
-width+=4
-bar.style.width=width+"%"
-
-if(width>=100){
-
-clearInterval(interval)
-
-window.location.href="https://drive.google.com/uc?export=download&id=1UxT61UTkup8O80v075yO8wibD4rLVmrK"
-
-}
-
-},100)
-
-}
-
+  installBtn.addEventListener('click', () => {
+    const opened = window.open(NEXT_URL, '_blank');
+    if (opened) {
+      status.textContent = "Membuka halaman instalasi...";
+      opened.focus();
+    } else {
+      status.textContent = "Mengarahkan ke halaman instalasi...";
+      window.location.href = NEXT_URL;
+    }
+  });
 </script>
-
 </body>
 </html>

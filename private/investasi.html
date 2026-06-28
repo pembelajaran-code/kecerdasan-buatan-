@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9278385714067409"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9278385714067409">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/jpg" href="https://iili.io/FvxcSaa.jpg"/>
   <title>AbidinAI - Investasi & Analisis</title>
@@ -68,15 +71,6 @@
       flex: 1;
       overflow-y: auto;
       padding: 0 10px;
-    }
-
-    .menu-badge {
-      margin-left: auto;
-      background: #4f46e5;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 0.75rem;
     }
 
     .menu-item {
@@ -156,7 +150,7 @@
       color: #718096;
     }
 
-    /* Main Content Styles */
+    
     .main-content {
       flex: 1;
       margin-left: 260px;
@@ -373,82 +367,16 @@
       gap: 8px;
     }
 
-    .plus-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: none;
-      background-color: #f3f4f6;
-      color: #4b5563;
-      transition: all 0.2s;
-    }
-
-    .plus-btn:hover {
-      background-color: #e5e7eb;
-    }
-
-    .plus-menu {
-      position: absolute;
-      bottom: 60px;
-      right: 120px;
-      background: white;
-      border: 1px solid #e5e5e6;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      display: none;
-      flex-direction: column;
-      padding: 8px;
-      z-index: 10;
-      max-height: 400px;
-      overflow-y: auto;
-    }
-
-    .plus-menu .menu-item {
-      width: 100%;
-      padding: 10px 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      text-align: left;
-      transition: background-color 0.2s;
-      border-radius: 6px;
-      color: #4a5568;
-    }
-
-    .plus-menu .menu-item:hover {
-      background-color: #f3f4f6;
-      color: #4f46e5;
-    }
-
-    .ocr-btn, .send-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-
-    .ocr-btn {
-      background-color: #f3f4f6;
-      color: #4b5563;
-    }
-
-    .ocr-btn:hover {
-      background-color: #e5e7eb;
-    }
-
     .send-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
       background-color: #4f46e5;
       color: white;
     }
@@ -523,67 +451,8 @@
       color: #718096;
     }
 
-    .upload-area {
-      border: 2px dashed #e5e5e6;
-      border-radius: 8px;
-      padding: 30px;
-      text-align: center;
-      margin-bottom: 20px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .upload-area:hover {
-      border-color: #4f46e5;
-      background-color: #f9fafb;
-    }
-
-    .upload-icon {
-      font-size: 40px;
-      color: #4f46e5;
-      margin-bottom: 10px;
-    }
-
-    .upload-text {
-      margin-bottom: 10px;
-      color: #4a5568;
-    }
-
-    .file-input {
-      display: none;
-    }
-
-    .process-btn {
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 500;
-      display: none;
-      margin: 10px auto;
-    }
-
-    .process-btn:hover {
-      background-color: #4338ca;
-    }
-
-    .ocr-result {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #f9fafb;
-      border-radius: 8px;
-      display: none;
-    }
-
-    .ocr-progress {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 15px 0;
-      color: #4f46e5;
-      font-weight: 500;
+    .modal-body-research {
+        padding: 10px;
     }
 
     @keyframes fadeIn {
@@ -659,14 +528,6 @@
       .input-buttons {
         justify-content: flex-end;
       }
-
-      .plus-menu {
-        left: 0;
-        right: auto;
-        bottom: 100%;
-        margin-bottom: 10px;
-        width: 250px;
-      }
     }
 
     .memory-controls {
@@ -735,95 +596,6 @@
 
     .action-btn.regenerate {
       color: #f59e0b;
-    }
-
-    #multiple-images-preview {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 8px;
-      border: 1px solid #e5e5e6;
-      border-radius: 8px;
-      background-color: #f9fafb;
-      margin-bottom: 8px;
-      width: 100%;
-      align-items: center;
-    }
-
-    .image-preview-item {
-      position: relative;
-      width: 60px;
-      height: 60px;
-      flex-shrink: 0;
-    }
-
-    .image-preview-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 2px solid #4f46e5;
-    }
-
-    .remove-image-btn {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: #ef4444;
-      color: white;
-      border: 1px solid white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    }
-
-    .modal-body-research {
-        padding: 10px;
-    }
-
-    .multiple-preview-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 15px 0;
-      justify-content: center;
-    }
-
-    .multiple-preview-item {
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-
-    .multiple-preview-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .multiple-preview-badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: #4f46e5;
-      color: white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: bold;
     }
 
     .title-shortcut {
@@ -994,52 +766,6 @@
     </div>
   </div>
 
-  <div class="modal" id="ocrModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <i class="fas fa-file-image"></i> Unggah Gambar Pintar
-        </div>
-        <button class="close-btn" id="closeModal">&times;</button>
-      </div>
-
-      <div class="upload-area" id="uploadArea">
-        <div class="upload-icon">
-          <i class="fas fa-cloud-upload-alt"></i>
-        </div>
-        <div class="upload-text">
-          <strong>Klik untuk mengunggah gambar</strong><br>
-          Maksimal 5 gambar (JPG/PNG, 5MB)
-        </div>
-        <div style="font-size: 12px; color: #718096;">
-          Format yang didukung:<br> JPG, PNG (maks. 5MB semua)
-        </div>
-        <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
-      </div>
-
-      <div id="multiplePreviewContainer" class="multiple-preview-container"></div>
-
-      <button id="processBtn" class="process-btn">
-        <i class="fas fa-paper-plane"></i> Proses Gambar Pintar
-      </button>
-
-      <div class="ocr-progress" id="progressContainer" style="display: none;">
-        <div class="loading"></div>
-        <span id="progressText">Memproses gambar...</span>
-      </div>
-
-      <div class="ocr-result" id="ocrResult">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-          <strong>Hasil Analisis:</strong>
-          <button class="copy-btn" id="copyResult" style="position: static; padding: 3px 8px;">
-            <i class="fas fa-copy"></i> Salin
-          </button>
-        </div>
-        <div id="resultText" style="white-space: pre-line;"></div>
-      </div>
-    </div>
-  </div>
-
   <div class="modal" id="deepResearchModal">
     <div class="modal-content">
       <div class="modal-header">
@@ -1053,22 +779,10 @@
         <div style="margin-top: 15px;">
           <input type="text" id="researchQueryInput" placeholder="Contoh: Efek rumah kaca..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
         </div>
-        <button id="startResearchBtn" class="process-btn" style="display: block; width: 100%; margin-top: 15px;">
+        <button id="startResearchBtn" class="process-btn" style="display: block; width: 100%; margin-top: 15px; background-color: #4f46e5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 500;">
           <i class="fas fa-paper-plane"></i> Mulai Riset
         </button>
       </div>
-    </div>
-  </div>
-
-  <div class="modal" id="audioSpectrumModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <i class="fas fa-chart-bar"></i> Fitur Analisis Audio
-        </div>
-        <button class="close-btn" id="closeAudioModal">&times;</button>
-      </div>
-      <p style="text-align: center;">Fitur ini masih dalam tahap pengembangan. Nantikan pembaruan selanjutnya!</p>
     </div>
   </div>
 
@@ -1081,6 +795,15 @@
       <div class="sidebar-title">
         <i class="fas fa-robot"></i>
         <span>ABIDINAI</span>
+      </div>
+    </div>
+
+    <!-- SIDEBAR MENU HANYA TOMBOL KELUAR -->
+    <div class="sidebar-menu">
+      <!-- TOMBOL KELUAR (LOGOUT) -->
+      <div class="menu-item logout-item" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Keluar</span>
       </div>
     </div>
 
@@ -1106,7 +829,6 @@
             </div>
           </div>
         </div>
-        <!-- TEKS LANGSUNG TANPA TAG HTML -->
         <div class="title-shortcut">📈 Hallo Investor!</div>
         <div class="subtitle-shortcut">Saya siap membantu analisis Forex, Saham, Crypto, Emas, dan Reksadana.</div>
 
@@ -1185,8 +907,6 @@
 
       <div class="input-container">
         <div class="input-box">
-          <div id="multiple-images-preview" style="display: none;"></div>
-
           <textarea 
             id="messageInput" 
             placeholder="Ketik pesan ke AbidinAI...." 
@@ -1199,64 +919,6 @@
           ></textarea>
           
           <div class="input-buttons">
-            <button class="ocr-btn" onclick="openOCRModal()">
-              <i class="fas fa-file-image"></i>
-            </button>
-            
-            <div class="input-buttons">
-              <button class="plus-btn" onclick="togglePlusMenu()">
-                <i class="fas fa-plus"></i>
-              </button>
-              
-              <!-- MENU PLUS BERISI SEMUA FITUR DARI SIDEBAR -->
-              <div class="plus-menu" id="plusMenu">
-                <a href="creator.html" class="menu-item">
-                  <i class="fas fa-paint-brush"></i>
-                  <span>AbidinAI CREATOR</span>
-                </a>
-                <a href="translate.html" class="menu-item">
-                  <i class="fas fa-language"></i>
-                  <span>Terjemahan Otomatis</span>
-                </a>
-                <a href="alarm.html" class="menu-item">
-                  <i class="fas fa-bell"></i>
-                  <span>Alarm AI</span>
-                </a>
-                <a href="obrolan.html" class="menu-item">
-                  <i class="fas fa-comments"></i>
-                  <span>Obrolan AI</span>
-                </a>
-                <a href="obrolanfull.html" class="menu-item">
-                  <i class="fas fa-brain"></i>
-                  <span>Obrolan AI Full</span>
-                </a>
-                <a href="dokter.html" class="menu-item">
-                  <i class="fas fa-user-md"></i>
-                  <span>Dokter Kesehatan</span>
-                </a>
-                <a href="jasa.html" class="menu-item">
-                  <img src="https://png.pngtree.com/png-vector/20250831/ourmid/pngtree-flat-clapperboard-video-icon-black-and-white-striped-top-with-simple-png-image_17345655.webp" alt="Video AI" style="width: 20px; height: 20px; margin-right: 8px;">
-                  <span>Buat Video AI</span>
-                </a>
-                <a href="investasi.html" class="menu-item">
-                  <i class="fas fa-chart-line"></i>
-                  <span>Investasi</span>
-                </a>
-                <div class="menu-item" onclick="openOCRModal()">
-                  <i class="fas fa-file-alt"></i>
-                  <span>Unggah Gambar Pintar</span>
-                </div>
-                <a href="https://wa.me/6283169364879" class="menu-item" target="_blank">
-                  <i class="fas fa-exclamation-triangle"></i>
-                  <span>Lapor Masalah</span>
-                </a>
-                <div class="menu-item" onclick="toggleAudio()">
-                  <i class="fas fa-music"></i>
-                  <span>Putar Musik</span>
-                </div>
-              </div>
-            </div>
-            
             <button class="send-btn" onclick="sendMessage()" id="sendButton">
               <i class="fas fa-paper-plane"></i>
             </button>
@@ -1270,7 +932,7 @@
     <source src="https://d.top4top.io/m_33403we8x0.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- MODAL RIWAYAT CHAT DENGAN TAMPILAN BARU (TANPA TAG HTML) -->
+  <!-- MODAL RIWAYAT CHAT -->
   <div class="modal" id="chatHistoryModal">
     <div class="modal-content" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
       <div class="modal-header">
@@ -1280,7 +942,6 @@
         <button class="close-btn" id="closeChatHistoryModal">&times;</button>
       </div>
       <div class="modal-body" id="chatHistoryList" style="padding: 10px;">
-        <!-- Daftar riwayat chat akan ditampilkan di sini -->
         <div style="text-align: center; color: #718096; padding: 20px;" id="chatHistoryEmpty">
           <i class="fas fa-comment-slash" style="font-size: 48px; margin-bottom: 10px;"></i>
           <p>Belum ada riwayat chat</p>
@@ -1298,11 +959,7 @@
       let isMusicPlaying = false;
       let lastTypingElement = null;
       let db = null;
-      let ocrExtractedText = '';
-      let ocrImageURL = null;
-      let selectedFiles = [];
       let isShortcutMenuOpen = false;
-      let uploadedImages = [];
 
       const devToolsState = {open: false, orientation: null};
       const devToolsThreshold = 160;
@@ -1431,6 +1088,17 @@
 
       function formatBoldText(text) {
         return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      }
+
+      function cleanMarkdown(text) {
+        text = text.replace(/#{1,6}\s*/g, '');
+        text = text.replace(/\*\*/g, '');
+        text = text.replace(/\*/g, '');
+        text = text.replace(/_/g, '');
+        text = text.replace(/`/g, '');
+        text = text.replace(/---/g, '');
+        text = text.replace(/\n{3,}/g, '\n\n');
+        return text.trim();
       }
 
       function initDatabase() {
@@ -1586,8 +1254,6 @@
           console.error('Error initializing database:', error);
         }
 
-        initOCRModal();
-        initAudioSpectrumModal();
         initDeepResearchModal();
         initChatHistoryModal();
 
@@ -1619,8 +1285,8 @@
       }
 
       window.logout = function() {
-          localStorage.removeItem("abidinai_token");
-          window.location.href = "../index.html";
+        localStorage.setItem("abidinai_token", "logged_in");
+        window.location.href = "dashboard.html";
       };
 
       window.toggleShortcutMenu = function() {
@@ -1640,14 +1306,6 @@
         messageInput.style.height = 'auto';
         messageInput.style.height = Math.min(messageInput.scrollHeight, 200) + 'px';
         toggleShortcutMenu();
-      }
-
-      window.openCreatorModal = function() {
-        if (devToolsState.open) {
-          showWarning();
-          return false;
-        }
-        window.location.href = "creator.html";
       }
 
       window.handleKeyPress = function(event) {
@@ -1699,313 +1357,15 @@
         }
       };
 
-      window.updateImagePreview = function() {
-        const previewContainer = document.getElementById('multiple-images-preview');
-        previewContainer.innerHTML = '';
-
-        if (uploadedImages.length === 0) {
-          previewContainer.style.display = 'none';
-          return;
-        }
-
-        previewContainer.style.display = 'flex';
-
-        uploadedImages.forEach((imageData, index) => {
-          const previewItem = document.createElement('div');
-          previewItem.className = 'image-preview-item';
-
-          const img = document.createElement('img');
-          img.src = imageData.dataURL;
-          img.alt = `Preview ${index + 1}`;
-
-          const removeBtn = document.createElement('button');
-          removeBtn.className = 'remove-image-btn';
-          removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-          removeBtn.onclick = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            uploadedImages.splice(index, 1);
-            if (uploadedImages.length === 0) {
-              ocrExtractedText = '';
-            }
-            updateImagePreview();
-          };
-
-          previewItem.appendChild(img);
-          previewItem.appendChild(removeBtn);
-          previewContainer.appendChild(previewItem);
-        });
-      }
-
-      window.removeImagePreview = function() {
-        uploadedImages = [];
-        ocrExtractedText = '';
-        updateImagePreview();
-      }
-
-      function initOCRModal() {
-        const modal = document.getElementById('ocrModal');
-        const closeBtn = document.getElementById('closeModal');
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-        const processBtn = document.getElementById('processBtn');
-        const copyResultBtn = document.getElementById('copyResult');
-        const resultText = document.getElementById('resultText');
-        const progressContainer = document.getElementById('progressContainer');
-        const progressText = document.getElementById('progressText');
-        const ocrResult = document.getElementById('ocrResult');
-        const multiplePreviewContainer = document.getElementById('multiplePreviewContainer');
-
-        closeBtn.addEventListener('click', () => modal.style.display = 'none');
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) modal.style.display = 'none';
-        });
-
-        uploadArea.addEventListener('click', () => fileInput.click());
-
-        uploadArea.addEventListener('dragover', (e) => {
-          e.preventDefault();
-          uploadArea.style.borderColor = '#4f46e5';
-          uploadArea.style.backgroundColor = '#f9fafb';
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-          uploadArea.style.borderColor = '#e5e5e6';
-          uploadArea.style.backgroundColor = 'transparent';
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-          e.preventDefault();
-          uploadArea.style.borderColor = '#e5e5e6';
-          uploadArea.style.backgroundColor = 'transparent';
-
-          if (e.dataTransfer.files.length) {
-            fileInput.files = e.dataTransfer.files;
-            handleFileUpload(Array.from(fileInput.files));
-          }
-        });
-
-        fileInput.addEventListener('change', () => {
-          if (fileInput.files.length) {
-            handleFileUpload(Array.from(fileInput.files));
-          }
-        });
-
-        processBtn.addEventListener('click', processAllImages);
-
-        copyResultBtn.addEventListener('click', () => {
-          navigator.clipboard.writeText(resultText.textContent).then(() => {
-            copyResultBtn.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
-            setTimeout(() => {
-              copyResultBtn.innerHTML = '<i class="fas fa-copy"></i> Salin';
-            }, 1500);
-          });
-        });
-
-        function handleFileUpload(files) {
-          selectedFiles = [];
-          multiplePreviewContainer.innerHTML = '';
-
-          if (files.length > 5) {
-            alert('Maksimal 5 gambar yang dapat diproses sekaligus! Hanya 5 gambar pertama yang akan digunakan.');
-            files = files.slice(0, 5);
-          }
-
-          for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-
-            if (!file.type.match('image.*')) {
-              alert(`File "${file.name}" bukan gambar! Hanya file gambar (JPG, PNG) yang didukung!`);
-              continue;
-            }
-
-            if (file.size > 5 * 1024 * 1024) {
-              alert(`File "${file.name}" terlalu besar! Ukuran file maksimal 5MB!`);
-              continue;
-            }
-
-            selectedFiles.push(file);
-
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              const previewItem = document.createElement('div');
-              previewItem.className = 'multiple-preview-item';
-              previewItem.innerHTML = `
-                <img src="${e.target.result}" class="multiple-preview-image" alt="Preview ${i+1}">
-                <div class="multiple-preview-badge">${i+1}</div>
-              `;
-              multiplePreviewContainer.appendChild(previewItem);
-            };
-            reader.readAsDataURL(file);
-          }
-
-          if (selectedFiles.length === 0) {
-            processBtn.style.display = 'none';
-            return;
-          }
-
-          processBtn.style.display = 'block';
-          ocrResult.style.display = 'none';
-
-          document.querySelector('.upload-text').innerHTML =
-            `<strong>${selectedFiles.length} gambar dipilih</strong><br>Klik "Proses Semua Gambar" untuk memulai`;
-        }
-
-        async function processAllImages() {
-          if (selectedFiles.length === 0) return;
-
-          processBtn.style.display = 'none';
-          progressContainer.style.display = 'flex';
-
-          let allResults = [];
-
-          try {
-            for (let i = 0; i < selectedFiles.length; i++) {
-              const file = selectedFiles[i];
-
-              progressText.textContent = `Memproses gambar ${i+1} dari ${selectedFiles.length}...`;
-
-              try {
-                const result = await processSingleImage(file, i);
-                allResults.push(result);
-              } catch (error) {
-                console.error(`Error processing image ${i+1}:`, error);
-                allResults.push(`Gambar ${i+1}: Error - ${error.message}`);
-              }
-            }
-
-            displayAllResults(allResults);
-
-          } catch (error) {
-            console.error('Error processing images:', error);
-            progressText.textContent = `Error: ${error.message}`;
-            setTimeout(() => {
-              progressContainer.style.display = 'none';
-              processBtn.style.display = 'block';
-            }, 2000);
-          }
-        }
-
-        async function processSingleImage(file, index) {
-          const formData = new FormData();
-          formData.append('image', file);
-
-          const response = await fetch("/api/ocr", {
-            method: "POST",
-            body: formData
-          });
-
-          const contentType = response.headers.get('content-type');
-          if (!contentType || !contentType.includes('application/json')) {
-            const textResponse = await response.text();
-
-            if (textResponse.trim().startsWith('<!DOCTYPE') || textResponse.includes('<html')) {
-              throw new Error('Server tidak mengembalikan JSON yang valid. Mungkin terjadi error di server.');
-            }
-
-            try {
-              const jsonData = JSON.parse(textResponse);
-              return jsonData;
-            } catch (parseError) {
-              throw new Error('Server tidak mengembalikan JSON yang valid: ' + textResponse.substring(0, 50) + '...');
-            }
-          }
-
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || `Error: ${response.status} - ${response.statusText}`);
-          }
-
-          const data = await response.json();
-          const aiReply = data.reply;
-
-          if (!aiReply || aiReply.trim() === "") {
-            return `Gambar ${index+1}: Tidak dapat menganalisis gambar ini.`;
-          } else {
-            return `Gambar ${index+1}: ${aiReply}`;
-          }
-        }
-
-        function displayAllResults(results) {
-          const resultText = results.join('\n\n');
-
-          document.getElementById('resultText').textContent = resultText;
-          document.getElementById('ocrResult').style.display = 'block';
-          document.getElementById('progressContainer').style.display = 'none';
-
-          ocrExtractedText = resultText;
-
-          uploadedImages = [];
-          let loadedCount = 0;
-
-          selectedFiles.forEach((file) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              uploadedImages.push({
-                file: file,
-                dataURL: e.target.result
-              });
-              loadedCount++;
-
-              if (loadedCount === selectedFiles.length) {
-                updateImagePreview();
-              }
-            };
-            reader.readAsDataURL(file);
-          });
-
-          modal.style.display = 'none';
-        }
-      }
-
-      let isPlusMenuOpen = false;
-
-      window.togglePlusMenu = function() {
-        const plusMenu = document.getElementById('plusMenu');
-        if (isPlusMenuOpen) {
-          plusMenu.style.display = 'none';
-        } else {
-          plusMenu.style.display = 'flex';
-        }
-        isPlusMenuOpen = !isPlusMenuOpen;
-      }
-
       document.addEventListener('click', function(event) {
-        const plusMenu = document.getElementById('plusMenu');
-        const plusBtn = document.querySelector('.plus-btn');
         const dropdownShortcutMenu = document.getElementById('dropdownShortcutMenu');
         const shortcutBtn = document.querySelector('.btn-shortcut:last-child');
-
-        if (plusMenu && plusBtn && !plusMenu.contains(event.target) && !plusBtn.contains(event.target)) {
-          plusMenu.style.display = 'none';
-          isPlusMenuOpen = false;
-        }
 
         if (dropdownShortcutMenu && shortcutBtn && !dropdownShortcutMenu.contains(event.target) && !shortcutBtn.contains(event.target)) {
             dropdownShortcutMenu.classList.remove("show");
             isShortcutMenuOpen = false;
         }
       });
-
-      window.openAudioSpectrumModal = function() {
-        if (devToolsState.open) {
-          showWarning();
-          return false;
-        }
-        const modal = document.getElementById('audioSpectrumModal');
-        modal.style.display = 'flex';
-        togglePlusMenu();
-      };
-
-      function initAudioSpectrumModal() {
-        const modal = document.getElementById('audioSpectrumModal');
-        const closeBtn = document.getElementById('closeAudioModal');
-
-        closeBtn.addEventListener('click', () => modal.style.display = 'none');
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) modal.style.display = 'none';
-        });
-      }
 
       window.openDeepResearchModal = function() {
         const modal = document.getElementById('deepResearchModal');
@@ -2016,7 +1376,6 @@
         input.value = messageInput.value.trim();
 
         modal.style.display = 'flex';
-        togglePlusMenu();
         const dropdownShortcutMenu = document.getElementById('dropdownShortcutMenu');
         if (dropdownShortcutMenu && dropdownShortcutMenu.classList.contains('show')) {
              dropdownShortcutMenu.classList.remove('show');
@@ -2028,7 +1387,7 @@
         sendBtn.onclick = function() {
             const query = input.value.trim();
             if (query) {
-                sendMessageWithCommand(`Berikut hasil riset untuk <b>${query}</b>`);
+                sendMessageWithCommand(`Berikut hasil riset untuk ${query}`);
                 modal.style.display = 'none';
             }
         };
@@ -2137,36 +1496,6 @@
         }
       };
 
-      window.openOCRModal = function() {
-        if (devToolsState.open) {
-          showWarning();
-          return false;
-        }
-        togglePlusMenu();
-        const dropdownShortcutMenu = document.getElementById('dropdownShortcutMenu');
-        if (dropdownShortcutMenu && dropdownShortcutMenu.classList.contains('show')) {
-             dropdownShortcutMenu.classList.remove('show');
-             isShortcutMenuOpen = false;
-        }
-
-        const modal = document.getElementById('ocrModal');
-        modal.style.display = 'flex';
-
-        document.getElementById('multiplePreviewContainer').innerHTML = '';
-        document.getElementById('processBtn').style.display = 'none';
-        document.getElementById('progressContainer').style.display = 'none';
-        document.getElementById('ocrResult').style.display = 'none';
-        document.getElementById('fileInput').value = '';
-        document.querySelector('.upload-text').innerHTML =
-          '<strong>Klik untuk mengunggah gambar</strong><br>Maksimal 5 gambar (JPG/PNG, 5MB)';
-
-        uploadedImages = [];
-        ocrExtractedText = '';
-        updateImagePreview();
-
-        selectedFiles = [];
-      };
-
       function addMessage(sender, text, messageClass, timestamp = null, save = true) {
         const chatbox = document.getElementById("chatbox");
         const messageDiv = document.createElement("div");
@@ -2174,6 +1503,11 @@
 
         const messageId = 'msg-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
         const timeStr = timestamp ? new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : getCurrentTime();
+
+        let cleanText = text;
+        if (messageClass === 'ai-message') {
+          cleanText = cleanMarkdown(text);
+        }
 
         messageDiv.innerHTML = `
           <div class="avatar ${messageClass === 'ai-message' ? 'ai-avatar' : ''}">
@@ -2184,7 +1518,7 @@
               <span class="message-sender">${sender}</span>
               <span class="message-time">${timeStr}</span>
             </div>
-            <div class="message-text" id="${messageId}-text">${text}</div>
+            <div class="message-text" id="${messageId}-text">${cleanText}</div>
             ${messageClass === 'ai-message' ? `
             <div class="message-actions">
               <button class="action-btn copy" onclick="copyMessageText('${messageId}')">
@@ -2205,7 +1539,7 @@
         chatbox.scrollTop = chatbox.scrollHeight;
 
         if (save && db) {
-          saveMessageToDB(sender, text, timestamp).catch(error => {
+          saveMessageToDB(sender, cleanText, timestamp).catch(error => {
             console.error('Gagal menyimpan pesan:', error);
           });
         }
@@ -2278,7 +1612,7 @@
             }
 
             const data = await response.json();
-            const aiReply = data.reply;
+            let aiReply = data.reply;
 
             messageTextElement.innerHTML = '';
             messageDiv.classList.remove('user-message');
@@ -2335,27 +1669,15 @@
         const input = document.getElementById("messageInput");
         const userText = input.value.trim();
 
-        let fullMessageText = userText;
-        if (uploadedImages.length > 0) {
-            const imageInfo = `[Hasil Analisis ${uploadedImages.length} Gambar: ${ocrExtractedText}]`;
-            fullMessageText = `${imageInfo}\n\n${userText}`;
-        }
+        if (!userText) return;
 
         const chatbox = document.getElementById("chatbox");
         const sendButton = document.getElementById("sendButton");
 
-        let displayMessage = userText;
-        if (!displayMessage && uploadedImages.length > 0) {
-            displayMessage = `[${uploadedImages.length} Gambar terunggah untuk dianalisis]`;
-            if (ocrExtractedText) {
-                 displayMessage += `\n\n<i>(Hasil Analisis: ${ocrExtractedText.substring(0, 100)}...)</i>`;
-            }
-        }
+        // Tambahkan pesan user ke chat
+        addMessage('Anda', userText, 'user-message');
 
-        if (!displayMessage && uploadedImages.length === 0) return;
-
-        const userDiv = addMessage('Anda', displayMessage, 'user-message');
-
+        // Tampilkan loading
         const typingDiv = document.createElement("div");
         typingDiv.className = "message ai-message";
         typingDiv.innerHTML = `
@@ -2363,7 +1685,7 @@
           <div class="message-content">
             <div class="typing-indicator">
               <div class="loading"></div>
-              AbidinAI sedang ${uploadedImages.length > 0 ? 'menganalisis gambar dan mengetik...' : 'mengetik...'}
+              AbidinAI sedang mengetik...
             </div>
           </div>
         `;
@@ -2374,17 +1696,13 @@
         input.value = '';
         input.style.height = 'auto';
 
-        uploadedImages = [];
-        ocrExtractedText = '';
-        updateImagePreview();
-
         try {
           const response = await fetch("/api/chat", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message: fullMessageText })
+            body: JSON.stringify({ message: userText })
           });
 
           if (!response.ok) {
@@ -2405,6 +1723,7 @@
           typingDiv.remove();
           displayMaintenanceMessage();
           console.error("Error:", error);
+        } finally {
           sendButton.disabled = false;
         }
       };
@@ -2445,6 +1764,8 @@
           listeningElement = null;
         }
 
+        let cleanReply = cleanMarkdown(aiReply);
+
         let messageTextContainer;
         let messageId;
         
@@ -2455,6 +1776,7 @@
               const textDiv = parentMsg.querySelector('.message-text');
               messageId = textDiv ? textDiv.id : null;
             }
+            messageTextContainer.innerHTML = cleanReply;
         } else {
             const container = document.createElement("div");
             container.className = "message ai-message";
@@ -2466,7 +1788,7 @@
                   <span class="message-sender">AbidinAI</span>
                   <span class="message-time">${getCurrentTime()}</span>
                 </div>
-                <div class="message-text" id="${messageId}-text"></div>
+                <div class="message-text" id="${messageId}-text">${cleanReply}</div>
                 <div class="message-actions">
                   <button class="action-btn copy" onclick="copyMessageText('${messageId}')">
                     <i class="fas fa-copy"></i> Salin
@@ -2484,60 +1806,17 @@
             messageTextContainer = container.querySelector('.message-text');
             
             if (db) {
-              saveMessageToDB('AbidinAI', aiReply).catch(error => {
+              saveMessageToDB('AbidinAI', cleanReply).catch(error => {
                 console.error('Gagal menyimpan pesan AI:', error);
               });
             }
-        }
-
-        const parts = aiReply.split(/```(?:\w+)?\n?([\s\S]*?)```/g);
-        let textToRead = "";
-
-        messageTextContainer.innerHTML = '';
-
-        for (let i = 0; i < parts.length; i++) {
-          if (i % 2 === 0) {
-            const textPart = parts[i];
-            const span = document.createElement("span");
-            span.innerHTML = formatBoldText(textPart);
-            
-            textToRead += textPart.replace(/\*\*/g, '') + " "; 
-            
-            messageTextContainer.appendChild(span);
-          } else {
-            const codeContent = parts[i];
-            const codeContainer = document.createElement("div");
-            codeContainer.className = "code-container";
-
-            const codeHeader = document.createElement("div");
-            codeHeader.className = "code-header";
-
-            const copyButton = document.createElement("button");
-            copyButton.className = "copy-btn";
-            copyButton.innerHTML = '<i class="fas fa-copy"></i> Salin';
-            copyButton.onclick = () => {
-              navigator.clipboard.writeText(codeContent).then(() => {
-                copyButton.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
-                setTimeout(() => copyButton.innerHTML = '<i class="fas fa-copy"></i> Salin', 1500);
-              });
-            };
-
-            codeHeader.appendChild(copyButton);
-
-            const pre = document.createElement("pre");
-            pre.textContent = codeContent;
-
-            codeContainer.appendChild(codeHeader);
-            codeContainer.appendChild(pre);
-            messageTextContainer.appendChild(codeContainer);
-          }
         }
 
         chatbox.scrollTop = chatbox.scrollHeight;
         sendButton.disabled = false;
 
         if (isVoiceMode) {
-          speakClean(textToRead);
+          speakClean(cleanReply);
         }
         isVoiceMode = false;
       }
