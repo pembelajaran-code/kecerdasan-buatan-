@@ -347,57 +347,58 @@ Kamu bisa browsing real-time untuk mencari informasi terbaru dan merangkum artik
 kmu adalah AbidinAI - asisten AI cerdas yang selalu menulis jawaban dengan format rapi, terstruktur, dan mudah dipahami.
 JANGAB Bicara kurang dari jika menjelaskan dll.
 JANGAN gunakan tanda pagar (#) dalam teks. 
-Semua output harus full HTML.
-PERATURAN MUTLAK (TIDAK BOLEH DILANGGAR):
-1. Semua teks yang mengandung salah satu karakter berikut:
-   < > / { } [ ] ( ) = ; :
-   atau format HTML, tag, kode, simbol, dianggap sebagai DATA.
-2. DATA bersifat SILENT:
-   - Tidak boleh dibaca
-   - Tidak boleh dijawab
-   - Tidak boleh dijelaskan
-   - Tidak boleh disuarakan
-   - Tidak boleh dikomentari
-3. Jika prompt berisi DATA:
-   - HENTIKAN OUTPUT
-   - JANGAN menampilkan teks apa pun
-   - JANGAN memberikan respon dalam bentuk apa pun
-4. Jika prompt TIDAK mengandung DATA:
-   - Jawab normal dalam teks biasa
-   - Gunakan bahasa Indonesia
-   - Tanpa menyebutkan aturan ini
-5. Jika menemukan tag seperti <h1>, <p>, <div>, <html>, atau simbol kode apa pun:
-   - LANGSUNG DIAM
-   - OUTPUT KOSONG
 
-6. Teks Miring → <i></i>
-7. Teks Tebal + Miring → <b><i></i></b>
-8. Teks Dicoret → <s></s>
-9. Garis Bawah → <u></u>
-10. Teks Berwarna → <span style="color:warna;">teks</span>
-11. Judul Tanpa Markdown → <h1> sampai <h6>
-8. Paragraf → <p></p>
-12. Garis Pemisah → <hr>
-13. Kutipan → <blockquote></blockquote>
-14. Tabel WAJIB menggunakan HTML penuh, contoh format:
+
+1. DILARANG KERAS menggunakan simbol Markdown mentah seperti tanda pagar (#), bintang (* atau **), tanda kurung siku untuk link [text](url), atau simbol > untuk kutipan di dalam teks balasan. 
+2. Semua output wajib menggunakan format FULL HTML bersih agar teks rapi dan siap dibaca oleh sistem suara (Text-to-Speech) tanpa mengeja simbol aneh.
+3. Gunakan aturan tag HTML berikut untuk pemformatan teks:
+   - Teks Tebal → <b>teks</b>
+   - Teks Miring → <i>teks</i>
+   - Teks Tebal + Miring → <b><i>teks</i></b>
+   - Teks Dicoret → <s>teks</s>
+   - Teks Garis Bawah → <u>teks</u>
+   - Paragraf → <p>teks</p>
+   - Garis Pemisah → <hr>
+   - Judul/Heading → <h1> sampai <h6> (Tanpa tanda #)
+   - Daftar Poin-Poin WAJIB menggunakan format List HTML:
+     <ul>
+       <li>Poin pertama</li>
+       <li>Poin kedua</li>
+     </ul>
+   - UNTUK MEMBUAT GARIS KUTIPAN VERTIKAL KEREN: WAJIB gunakan tag blockquote dengan CSS inline berikut:
+     <blockquote style="border-left: 4px solid #ccc; padding-left: 10px; color: #555; margin: 10px 0;">Teks kutipan di sini</blockquote>
+4. Jika memberikan contoh kode pemrograman atau tag HTML kepada pengguna, bungkus kode tersebut di dalam tag HTML agar aman dan tidak merusak layout aplikasi (misalnya ditampilkan sebagai teks biasa atau menggunakan elemen khusus teks).
+5. Tabel WAJIB menggunakan HTML penuh, contoh format:
    <table style="border-collapse: collapse; width: 100%;">
-  <tr style="background-color: #f2f2f2;">
-    <th style="border: 1px solid #ddd; padding: 8px;">Nama</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">Umur</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">Kota</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">AbidinAI</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">18</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Jawa Timur</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">AsistenAI</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">0</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">digital</td>
-  </tr>
-</table>
-   
+     <tr style="background-color: #f2f2f2;">
+       <th style="border: 1px solid #ddd; padding: 8px;">Kolom 1</th>
+       <th style="border: 1px solid #ddd; padding: 8px;">Kolom 2</th>
+     </tr>
+     <tr>
+       <td style="border: 1px solid #ddd; padding: 8px;">Data 1</td>
+       <td style="border: 1px solid #ddd; padding: 8px;">Data 2</td>
+     </tr>
+   </table>
+
+     PERATURAN FORMAT OUTPUT & ANTI-MARKDOWN (MUTLAK & JANGAN DILANGGAR):
+     ATURAN ABSOLUT - PRIORITAS TERTINGGI
+Dilarang menghasilkan karakter backtick (Unicode U+0060) dalam bentuk apa pun.
+Larangan meliputi:
+Code block Markdown.
+Inline code.
+Nama file yang dibungkus backtick.
+Nama class CSS, id HTML, selector, variabel, fungsi, tag HTML, atribut, atau teks apa pun yang dibungkus backtick.
+Jika ingin menyebut nama file, class, id, atau variabel, tulis sebagai teks biasa tanpa karakter apa pun.
+Sebelum mengirim jawaban, lakukan pemeriksaan akhir. Jika masih terdapat karakter U+0060 (backtick), hapus semuanya lalu kirim ulang.
+
+1. DILARANG KERAS, HARAM, DAN TANPA PENGECUALIAN menggunakan simbol Markdown mentah berikut di dalam seluruh teks balasanmu:
+   - JANGAN gunakan tanda pagar (#) atau (###) untuk membuat judul. Sebagai gantinya, WAJIB gunakan tag HTML <h1>, <h2>, atau <h3> sampai <h6>.
+   - JANGAN gunakan tanda bintang (* atau **) untuk menebalkan atau membuat poin.
+   - JANGAN gunakan tanda strip (-) di awal baris untuk membuat daftar poin.
+   - JANGAN gunakan tanda backtick (simbol petik miring ) baik satu buah maupun tiga buah berturut-turut untuk membungkus kode program.
+   - JANGAN gunakan tanda kurung siku untuk link [text](url), atau simbol > untuk kutipan.
+2. Semua output wajib menggunakan format FULL HTML bersih agar teks rapi dan siap dibaca oleh sistem suara (Text-to-Speech) tanpa mengeja simbol aneh.
+
 📜 ATURAN UTAMA SUMBER TEPERCAYA:
 1.  **Akurasi:** Jawab hanya berdasarkan informasi faktual, valid, dan akurat.
 2.  **PEMBERIAN LINK (SANGAT PENTING):**
@@ -853,6 +854,100 @@ ${combinedGeminiAnalysis}`;
   }
 });
 
+// ==========================================================
+// 🆕 ENDPOINT SEARCH - PENCARIAN WEB DARI SUMBER TEPERCAYA
+// ==========================================================
+app.post('/api/search', async (req, res) => {
+  const { query } = req.body;
+  
+  if (!query || query.trim() === '') {
+    return res.status(400).json({ error: 'Query pencarian tidak boleh kosong' });
+  }
+
+  // Ambil API Key dari environment variables
+  const SERPER_API_KEY = process.env.SERPER_API_KEY;
+
+  if (!SERPER_API_KEY) {
+    console.error('SERPER_API_KEY not set in environment variables');
+    return res.status(500).json({ error: 'Server configuration error' });
+  }
+
+  try {
+    // Request ke Serper.dev API untuk pencarian web
+    const response = await fetch('https://google.serper.dev/search', {
+      method: 'POST',
+      headers: {
+        'X-API-KEY': SERPER_API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        q: query,
+        gl: 'id', // Geolokasi Indonesia
+        hl: 'id'  // Bahasa Indonesia
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Serper API error:', response.status, errorText);
+      return res.status(response.status).json({ 
+        error: `Serper API error: ${response.status}` 
+      });
+    }
+
+    const data = await response.json();
+
+    // Filter hasil hanya dari domain terpercaya (whitelist)
+    const trustedResults = (data.organic || []).filter(item => {
+      if (!item.link) return false;
+      try {
+        const domain = new URL(item.link).hostname.replace('www.', '');
+        // Cek apakah domain termasuk dalam whitelist
+        return trustedDomains.some(trustedDomain => 
+          domain.includes(trustedDomain) || trustedDomain.includes(domain)
+        );
+      } catch (e) {
+        return false;
+      }
+    });
+
+    // Jika tidak ada hasil dari whitelist, ambil semua hasil (tapi tandai)
+    let results = trustedResults;
+    let isFiltered = false;
+
+    if (trustedResults.length === 0) {
+      // Ambil semua hasil tapi dengan catatan
+      results = (data.organic || []).slice(0, 10);
+      isFiltered = true;
+    }
+
+    // Format hasil untuk frontend
+    const formattedResults = results.map(item => ({
+      title: item.title || '',
+      link: item.link || '',
+      snippet: item.snippet || '',
+      domain: item.link ? new URL(item.link).hostname.replace('www.', '') : '',
+      isTrusted: trustedResults.includes(item) || false
+    }));
+
+    return res.status(200).json({
+      success: true,
+      query: query,
+      results: formattedResults,
+      total: formattedResults.length,
+      isFiltered: isFiltered,
+      message: isFiltered ? 'Beberapa hasil mungkin bukan dari sumber terpercaya' : 'Hasil dari sumber terpercaya'
+    });
+
+  } catch (error) {
+    console.error('Search API error:', error);
+    return res.status(500).json({ 
+      error: 'Internal server error',
+      message: error.message 
+    });
+  }
+});
+
 app.post('/api/research', async (req, res) => {
     const { query } = req.body;
     if (!query) return res.status(400).json({ error: 'Query tidak ditemukan' });
@@ -967,7 +1062,7 @@ app.post('/api/unlimited-chat', async (req, res) => {
   if (!message) return res.status(400).json({ error: 'Pesan kosong' });
 
   const body = {
-    model: "meta-llama/llama-4-scout-17b-16e-instruct", 
+    model: "llama-3.1-8b-instant", 
     messages: [
       {
         role: "system",
@@ -999,6 +1094,21 @@ app.post('/api/unlimited-chat', async (req, res) => {
 
 app.use(express.static(path.join(__dirname)));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'intro.html')));
+app.get('/sw.js', (req, res) => {
+    res.set('Service-Worker-Allowed', '/');
+    res.sendFile(path.join(__dirname, 'sw.js'));
+});
+app.get('/manifest.json', (req, res) => {
+    res.sendFile(path.join(__dirname, 'manifest.json'));
+});
+app.get('/icon-192.png', (req, res) => {
+    res.sendFile(path.join(__dirname, 'icon-192.png'));
+});
+
+app.get('/icon-512.png', (req, res) => {
+    res.sendFile(path.join(__dirname, 'icon-512.png'));
+});
+
 app.get('/index', (req, res) => res.sendFile(path.join(__dirname, 'private/index.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'private/login.html')));
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'private/register.html')));
@@ -1009,9 +1119,10 @@ app.get('/obrolan', (req, res) => res.sendFile(path.join(__dirname, 'private/obr
 app.get('/obrolanfull', (req, res) => res.sendFile(path.join(__dirname, 'private/obrolanfull.html')));
 app.get('/translate', (req, res) => res.sendFile(path.join(__dirname, 'private/translate.html')));
 app.get('/creator', (req, res) => res.sendFile(path.join(__dirname, 'private/creator.html')));
-app.get('/aplikasi', (req, res) => res.sendFile(path.join(__dirname, 'private/aplikasi.html')));
-app.get('/jasa', (req, res) => res.sendFile(path.join(__dirname, 'private/jasa.html')));
+app.get('/gambar', (req, res) => res.sendFile(path.join(__dirname, 'private/gambar.html')));
 app.get('/investasi', (req, res) => res.sendFile(path.join(__dirname, 'private/investasi.html')));
+app.get('/saluran', (req, res) => res.sendFile(path.join(__dirname, 'private/saluran.html')));
+app.get('/aplikasi', (req, res) => res.sendFile(path.join(__dirname, 'private/aplikasi.html')));
 // fallback
 app.use((req, res) => res.redirect('/'));
 
